@@ -1,0 +1,146 @@
+/* ============================================================
+   PORTAFOLIO — jhprogram
+   Registro visual: papel de plano técnico. Fondo crema, cuadrícula
+   fina de precisión (nod a "precisión milimétrica" de la home),
+   fichas montadas como láminas de un dossier, mucho aire entre
+   piezas para que la página respire.
+   ============================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,340..600;1,9..144,400..500&family=JetBrains+Mono:wght@400;500;600&display=swap');
+
+:root{
+    --cream:#f2ead6;
+    --cream-deep:#e9dfc2;
+    --ink:#211c14;
+    --ink-soft:#635c49;
+    --rule:rgba(33,28,20,.16);
+    --rule-strong:rgba(33,28,20,.32);
+    --oxide:#a4351f;
+}
+
+*{margin:0;padding:0;box-sizing:border-box}
+
+body{
+    background-color:var(--cream);
+    background-image:
+        linear-gradient(var(--rule) 1px,transparent 1px),
+        linear-gradient(90deg,var(--rule) 1px,transparent 1px),
+        linear-gradient(var(--rule-strong) 1px,transparent 1px),
+        linear-gradient(90deg,var(--rule-strong) 1px,transparent 1px);
+    background-size:28px 28px,28px 28px,140px 140px,140px 140px;
+    color:var(--ink);
+    font-family:'JetBrains Mono',ui-monospace,Consolas,monospace;
+    -webkit-font-smoothing:antialiased;
+}
+
+a{color:inherit}
+
+/* ---------- Navbar (versión clara, reutiliza los ids del script.js) ---------- */
+.navbar{
+    display:flex;justify-content:space-between;align-items:center;
+    padding:22px 8%;
+    background:rgba(242,234,214,.9);
+    backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);
+    border-bottom:1px solid var(--rule-strong);
+    position:sticky;top:0;z-index:100;
+}
+.nav-brand-link{display:flex;align-items:baseline;gap:8px;text-decoration:none}
+.nav-brand-text{font-family:'Fraunces',serif;font-weight:600;font-size:20px;color:var(--ink)}
+.nav-brand-badge{font-size:11px;letter-spacing:1.5px;color:var(--ink-soft)}
+.nav-links{display:flex;align-items:center}
+.nav-links a{text-decoration:none;color:var(--ink-soft);font-size:14px;margin-left:28px;padding-bottom:3px;border-bottom:1px solid transparent;transition:color .2s,border-color .2s}
+.nav-links a:hover{color:var(--ink)}
+.nav-links a.active{color:var(--oxide);border-color:var(--oxide)}
+.nav-toggle{display:none;flex-direction:column;justify-content:center;align-items:center;gap:5px;width:38px;height:38px;background:transparent;border:1px solid var(--rule-strong);border-radius:0;cursor:pointer}
+.nav-toggle span{display:block;width:18px;height:1.5px;background:var(--ink);transition:transform .3s,opacity .3s}
+.nav-toggle.open span:nth-child(1){transform:translateY(6.5px) rotate(45deg)}
+.nav-toggle.open span:nth-child(2){opacity:0}
+.nav-toggle.open span:nth-child(3){transform:translateY(-6.5px) rotate(-45deg)}
+.nav-backdrop{display:none}
+
+@media (max-width:768px){
+    .nav-toggle{display:flex}
+    .nav-links{
+        position:fixed;top:0;right:0;height:100vh;width:min(78vw,320px);
+        background:var(--cream);border-left:1px solid var(--rule-strong);
+        flex-direction:column;align-items:flex-start;justify-content:center;gap:6px;
+        padding:100px 32px 40px 32px;
+        transform:translateX(100%);transition:transform .4s cubic-bezier(.16,1,.3,1);
+        z-index:150;
+    }
+    .nav-links.open{transform:translateX(0)}
+    .nav-links a{margin-left:0;font-size:16px;padding:14px 0;width:100%;border-bottom:1px solid var(--rule)}
+    .nav-backdrop.open{display:block;position:fixed;inset:0;background:rgba(33,28,20,.35);z-index:140}
+}
+
+/* ---------- Encabezado tipo "cajetín" de plano ---------- */
+.sheet{max-width:1180px;margin:0 auto;padding:0 8% 100px 8%}
+.sheet-header{padding-top:72px;max-width:640px}
+.sheet-meta{
+    font-size:12px;letter-spacing:1.5px;color:var(--ink-soft);
+    padding-bottom:14px;margin-bottom:24px;border-bottom:1px solid var(--rule-strong);
+}
+.sheet-header h1{
+    font-family:'Fraunces',serif;font-weight:560;font-style:italic;
+    font-size:clamp(2.6rem,6vw,4.2rem);line-height:1;letter-spacing:-1px;
+    margin-bottom:22px;color:var(--ink);
+}
+.sheet-intro{font-size:14.5px;line-height:1.8;color:var(--ink-soft);max-width:52ch}
+
+/* ---------- Fichas de proyecto ---------- */
+.plates{
+    margin-top:80px;
+    display:grid;grid-template-columns:repeat(2,1fr);
+    column-gap:56px;row-gap:80px;
+}
+.plate{position:relative}
+.plate-frame{
+    position:relative;
+    padding:14px;
+    background:var(--cream-deep);
+    border:1px solid var(--rule-strong);
+}
+.plate-frame::before,.plate-frame::after,
+.plate-frame img{display:block}
+.plate-frame img{width:100%;aspect-ratio:4/3;object-fit:cover}
+/* marcas de escuadra en las esquinas — el único gesto decorativo de la página */
+.plate-frame::before,.plate-frame::after{
+    content:"";position:absolute;width:16px;height:16px;
+    border-color:var(--ink);border-style:solid;border-width:0;
+}
+.plate-frame::before{top:-1px;left:-1px;border-top-width:2px;border-left-width:2px}
+.plate-frame::after{bottom:-1px;right:-1px;border-bottom-width:2px;border-right-width:2px}
+.plate-caption{
+    display:flex;gap:16px;
+    margin-top:18px;padding-top:16px;
+    border-top:1px solid var(--rule);
+}
+.plate-index{
+    font-size:12px;color:var(--ink-soft);flex-shrink:0;padding-top:2px;
+}
+.plate-category{
+    display:block;font-size:11px;letter-spacing:1.5px;text-transform:uppercase;
+    color:var(--oxide);margin-bottom:6px;
+}
+.plate-text h2{
+    font-family:'Fraunces',serif;font-weight:560;font-size:21px;
+    margin-bottom:8px;color:var(--ink);
+}
+.plate-text p{font-size:13.5px;line-height:1.65;color:var(--ink-soft);margin-bottom:12px;max-width:38ch}
+.plate-stack{list-style:none;display:flex;flex-wrap:wrap;gap:8px 14px}
+.plate-stack li{font-size:11.5px;color:var(--ink-soft)}
+.plate-stack li:not(:last-child)::after{content:" /";margin-left:14px;color:var(--rule-strong)}
+
+@media (max-width:820px){
+    .plates{grid-template-columns:1fr;row-gap:64px}
+    .sheet{padding:0 6% 80px 6%}
+}
+
+/* ---------- Pie ---------- */
+.sheet-footer{
+    margin-top:120px;padding-top:24px;border-top:1px solid var(--rule-strong);
+    display:flex;flex-wrap:wrap;gap:16px;justify-content:space-between;
+    font-size:12.5px;color:var(--ink-soft);
+}
+.sheet-footer a{text-decoration:underline;text-underline-offset:3px;color:var(--ink-soft);transition:color .2s}
+.sheet-footer a:hover{color:var(--oxide)}

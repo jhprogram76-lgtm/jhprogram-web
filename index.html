@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="es">
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>jhprogram | Studio</title><link rel="stylesheet" href="style.css"><script>if(location.hash){document.documentElement.classList.add('skip-intro');}</script></head>
+<body>
+    <div id="intro-overlay" class="intro-container" onclick="entrarALaWeb()"><video autoplay muted loop playsinline id="bg-video"><source src="tu-video.mp4" type="video/mp4"></video><div class="video-overlay"></div><div class="logo-central"><img src="tu-logo-jhprogram.png" alt="Logo" class="main-logo"><p class="tap-to-enter">Haz clic a la Ballenita</p></div></div>
+    <main id="main-content" class="site-content">
+        <!-- NAVBAR ESTILO PORTAFOLIO (CREMA) -->
+        <nav class="navbar portfolio-nav">
+            <a href="index.html" class="nav-brand-link">
+                <span class="nav-brand-text">jhprogram</span><span class="nav-brand-badge">studio</span>
+            </a>
+            <button class="nav-toggle" id="navToggle" aria-label="Abrir menú" aria-expanded="false"><span></span><span></span><span></span></button>
+            <div class="nav-links" id="navLinks">
+                <a href="#servicios">Servicios</a>
+                <a href="portafolio.html">Portafolio</a>
+                <a href="#faq">FAQ</a>
+                <a href="#contacto">Contacto</a>
+            </div>
+            <div class="nav-backdrop" id="navBackdrop"></div>
+        </nav>
+
+        <section id="inicio" class="hero-section hero-with-bg"><div class="hero-container"><h1 class="hero-title">Código sólido. Diseños <span class="text-gradient">magníficos.</span></h1><p class="hero-intro"><strong>Creamos soluciones digitales a medida y sin intermediarios. Sitios web y aplicaciones, optimizadas para cargar al instante y transformar tus visitas en clientes fieles.</strong></p><div class="intro-pillars intro-about"><div class="pillar-card pillar-about"><div class="pillar-about-brand"><span class="pillar-about-badge">STUDIO</span></div><p><strong>Desde 2026 empezamos jhprogramstudio con una idea simple: crear webs a medida sin las complicaciones ni el precio de una agencia tradicional. Seguimos formándonos cada día en desarrollo web y ciberseguridad para ofrecerte no solo una web bonita, sino un código sólido, seguro y pensado para crecer contigo.</strong>  </p></div></div><div class="hero-actions"><a href="#servicios" class="btn-primary">Hablemos de tu proyecto</a></div></div></section>
+        <div class="wood-divider"><div class="divider-content"><span class="divider-badge">Meticulous Craftsmanship</span><h2>"La simplicidad es la máxima sofisticación. Construimos con precisión milimétrica."</h2></div></div>
+        <section id="servicios" class="services-section services-with-bg"><div class="services-container"><div class="services-header"><h2>¿Qué hacemos en el <span class="text-gradient">Studio</span>?</h2><p><strong>Soluciones digitales sin letra pequeña, solo ingeniería y creatividad puras.</strong>   </p><span class="price-hint">Proyectos desde 350€</span></div><div class="services-grid"><div class="service-box"><h3>Desarrollos Web a Medida</h3><p>Páginas corporativas, landing pages de alta conversión y aplicaciones web robustas construidas con código limpio.</p><ul class="service-features"><li>Código nativo y frameworks</li><li>Arquitecturas web optimizadas</li></ul></div><div class="service-box"><h3>Diseños de Interfaz (UI/UX)</h3><p>Estructuramos experiencias visuales intuitivas que guían al usuario hacia la acción y fieles a tu identidad.</p><ul class="service-features"><li>Prototipados interactivos previos</li><li>Interfaces adaptadas a móviles</li></ul></div><div class="service-box"><h3>Optimizaciones</h3><p>Analizamos, limpiamos y aceleramos tu sitio para garantizar las máximas puntuaciones en Google PageSpeed.</p><ul class="service-features"><li>Auditorías de rendimiento</li><li>Compresiones de recursos</li></ul></div></div></div></section>
+        <div class="wood-divider thin-divider"><div class="divider-content"><span class="divider-badge">Transparencia Total</span><h2>"Sin letra pequeña. Resolvemos cada duda antes de que la tengas."</h2></div></div>
+        <section id="faq" class="faq-section faq-with-bg">
+            <div class="faq-container"><div class="faq-header"><h2>Preguntas <span class="text-gradient">Frecuentes</span></h2><p>Todo lo que necesitas saber sobre plazos, pagos, propiedad del código y mantenimientos.</p></div><div class="faq-grid">
+            <div class="faq-item"><details><summary><h3>¿Cuánto tiempo tardáis en entregar un proyecto?</h3><span class="faq-icon"></span></summary><div class="faq-content"><p>Una Landing Page de alta conversión o web corporativa base suele requerir entre 1 y 2 semanas. Una tienda online configurada o una aplicación web a medida toma entre 3 y 5 semanas, dependiendo de la cantidad de funciones e integraciones solicitadas.</p></div></details></div>
+            <div class="faq-item"><details><summary><h3>¿Tenemos que pagar todo el proyecto de golpe?</h3><span class="faq-icon"></span></summary><div class="faq-content"><p>No. Trabajamos habitualmente con un esquema de hitos 50/50: un depósito inicial del 50% para arrancar la fase de arquitectura, diseño y desarrollo, y el 50% restante una vez que el sitio está completamente terminado, testeado en tus dispositivos y validado a tu satisfacción.</p></div></details></div>
+            <div class="faq-item"><details><summary><h3>¿Qué pasa con el hosting y el dominio web?</h3><span class="faq-icon"></span></summary><div class="faq-content"><p>Te asesoramos de forma 100% gratuita para elegir el mejor proveedor a tu nombre (Vercel, Cloudflare, Namecheap, etc.). Así mantienes el control absoluto y la propiedad legal de tu sitio web sin depender de ningún intermediario.</p></div></details></div>
+            <div class="faq-item"><details><summary><h3>¿Qué pasa si queremos hacer cambios en el futuro?</h3><span class="faq-icon"></span></summary><div class="faq-content">
+                <p>Al finalizar te entregamos un sitio web totalmente documentado y gestionable para que puedas modificar textos o fotos fácilmente. Si prefieres desentenderte por completo de la parte técnica y centrarte en tu negocio, dispones de tres planes mensuales de soporte y evolución técnica continua.</p>
+                <div class="faq-pricing">
+                    <p class="faq-pricing-label">Planes de soporte y evolución web mensual:</p>
+                    <div class="pricing-grid">
+                        <div class="pricing-card">
+                            <h4>Plan Esencial</h4>
+                            <div class="pricing-price"><span class="price-amount">45€</span><span class="price-period">/mes</span></div>
+                            <ul class="pricing-features">
+                                <li>Actualizaciones continuas de seguridad y dependencias</li>
+                                <li>Copias de seguridad semanales en servidores externos</li>
+                                <li>Monitorización de caídas en tiempo real 24/7</li>
+                                <li>Soporte técnico por correo electrónico</li>
+                            </ul>
+                            <button class="pricing-btn" type="button">Contratar Plan Esencial</button>
+                        </div>
+                        <div class="pricing-card pricing-featured">
+                            <span class="pricing-badge">Más Elegido</span>
+                            <h4>Plan Activo</h4>
+                            <div class="pricing-price"><span class="price-amount">79€</span><span class="price-period">/mes</span></div>
+                            <ul class="pricing-features">
+                                <li>Todo lo incluido en el Plan Esencial</li>
+                                <li>Copias de seguridad diarias automatizadas</li>
+                                <li>Revisiones manuales periódicas de código y rendimiento</li>
+                                <li>1 hora mensual incluida para cambios de contenido o diseño</li>
+                                <li>Atención prioritaria por WhatsApp directo</li>
+                            </ul>
+                            <button class="pricing-btn pricing-btn-primary" type="button">Recomendado · Elegir Plan Activo</button>
+                        </div>
+                        <div class="pricing-card">
+                            <h4>E-Commerce &amp; Pro</h4>
+                            <div class="pricing-price"><span class="price-amount">149€</span><span class="price-period">/mes</span></div>
+                            <ul class="pricing-features">
+                                <li>Soporte técnico preferente con respuesta urgente</li>
+                                <li>Monitorizaciones continuas de pasarelas de pago y stock</li>
+                                <li>Optimizaciones de rendimiento WPO mensuales continuas</li>
+                                <li>2 horas mensuales incluidas para cambios y promociones</li>
+                                <li>Informes mensuales de visitas y rendimiento analítico</li>
+                            </ul>
+                            <button class="pricing-btn" type="button">Contratar Plan E-Commerce</button>
+                        </div>
+                    </div>
+                </div>
+            </div></details></div>
+            <div class="faq-item"><details><summary><h3>¿Nuestro sitio web aparecerá en la primera página de Google?</h3><span class="faq-icon"></span></summary><div class="faq-content"><p>Todos nuestros proyectos incluyen SEO técnico de base: estructuramos el código al límite, optimizamos la velocidad de carga al 100% y añadimos metadatos semánticos para cumplir con los estándares de Google. Esto os da la base técnica perfecta para escalar posiciones de forma orgánica.</p></div></details></div>
+            <div class="faq-item"><details><summary><h3>¿Cómo nos comunicaremos durante el desarrollo?</h3><span class="faq-icon"></span></summary><div class="faq-content"><p>Trabajamos de forma directa y personal contigo, sin comerciales ni burocracia. Nos comunicaremos fluidamente vía WhatsApp, Slack o videollamadas periódicas. Os proporcionaremos enlaces de previsualización en vivo para que sigáis el progreso paso a paso en tiempo real.</p></div></details></div>
+        </div></div></section>
+        <div class="wood-divider thin-divider"><div class="divider-content"><span class="divider-badge">El Siguiente Paso</span><h2>"Cada gran proyecto empieza con una simple conversación."</h2></div></div>
+        <section id="contacto" class="contact-section contact-with-bg">
+            <div class="contact-container">
+                <div class="qualifier-card">
+                    <span class="qualifier-step"> FORMULARIO CALIFICADOR</span>
+                    <h2 class="qualifier-title">Detalles del Proyecto &amp; Contacto</h2>
+                    <p class="qualifier-subtitle">Rellena este cuestionario en 1 minuto. Nos permite analizar tu proyecto antes de reunirnos y darte una propuesta exacta.</p>
+                    <div class="qualifier-divider"></div>
+                    <form class="qualifier-form" action="https://formsubmit.co/jhprogram76@gmail.com" method="POST">
+                        <input type="hidden" name="_subject" value="Nuevo proyecto desde jhprogram.com">
+                        <input type="hidden" name="_captcha" value="false">
+                        <input type="hidden" name="_template" value="table">
+                        <input type="hidden" name="_next" value="https://jhprogram.vercel.app/">
+                        <div class="qualifier-row">
+                            <div class="qualifier-field">
+                                <label>Tu Nombre Completo *</label>
+                                <input type="text" name="Nombre completo" placeholder="Ej. Carlos Mendoza" required>
+                            </div>
+                            <div class="qualifier-field">
+                                <label>Tu Correo Electrónico *</label>
+                                <input type="email" name="Correo electrónico" placeholder="Ej. carlos@empresa.com" required>
+                            </div>
+                        </div>
+                        <div class="qualifier-row">
+                            <div class="qualifier-field">
+                                <label>Teléfono / WhatsApp (Opcional)</label>
+                                <input type="tel" name="Teléfono / WhatsApp" placeholder="Ej. +34 600 000 000">
+                            </div>
+                            <div class="qualifier-field">
+                                <label>Nombre de tu Empresa / Marca</label>
+                                <input type="text" name="Empresa / Marca" placeholder="Ej. Estudio Creativo / Marca personal">
+                            </div>
+                        </div>
+                        <div class="qualifier-row">
+                            <div class="qualifier-field">
+                                <label>Tipo de Solución Digital Seleccionada *</label>
+                                <select name="Tipo de solución" required>
+                                    <option value="" disabled selected>Selecciona una opción</option>
+                                    <option>Landing Page de Alta Conversión (Desde 350€)</option>
+                                    <option>Web Corporativa</option>
+                                    <option>Tienda Online / E-Commerce</option>
+                                    <option>Aplicación Web a Medida</option>
+                                </select>
+                            </div>
+                            <div class="qualifier-field">
+                                <label>Rango de Presupuesto Estimado *</label>
+                                <select name="Presupuesto estimado" required>
+                                    <option value="" disabled selected>Selecciona un rango</option>
+                                    <option>400€ - 800€</option>
+                                    <option>800€ - 1.500€</option>
+                                    <option>1.500€ - 3.000€</option>
+                                    <option>Más de 3.000€</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="qualifier-field qualifier-field-full">
+                            <label>¿En qué punto se encuentra tu idea? *</label>
+                            <div class="qualifier-radio-group">
+                                <label class="qualifier-radio-option"><input type="radio" name="Estado de la idea" value="Tengo la idea clara, falta programarla" required><span>Tengo la idea clara, falta programarla</span></label>
+                                <label class="qualifier-radio-option"><input type="radio" name="Estado de la idea" value="Ya tengo web vieja y quiero renovarla"><span>Ya tengo web vieja y quiero renovarla</span></label>
+                                <label class="qualifier-radio-option"><input type="radio" name="Estado de la idea" value="Es una idea inicial, necesito asesoría"><span>Es una idea inicial, necesito asesoría</span></label>
+                            </div>
+                        </div>
+                        <div class="qualifier-field qualifier-field-full">
+                            <label>Cuéntanos sobre tu negocio y qué objetivos buscas con esta web *</label>
+                            <textarea name="Detalles del proyecto" rows="4" placeholder="¿A qué se dedica tu negocio? ¿Qué funciones específicas necesitas? (ej. pasarela de pago, área privada, catálogo, sistema de reservas...)" required></textarea>
+                        </div>
+                        <div class="qualifier-footer">
+                            <p class="qualifier-guarantee">Respuesta en &lt;24h</p>
+                            <button type="submit" class="qualifier-submit"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M3 11L21 3L13 21L11 13L3 11Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg>Enviar Detalles del Proyecto</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+        <footer class="site-footer-full">
+            <div class="footer-container">
+                <div class="footer-brand">
+                    <div class="footer-logo"><img src="logo2.png" alt="jhprogram" class="footer-logo-icon"><div class="footer-logo-text-wrap"><span class="footer-logo-text">jhprogram</span><span class="footer-logo-badge">DESIGNED &amp; DEVELOPED</span></div></div>
+                    <p class="footer-brand-desc">Estudio independiente especializado en desarrollos web a medida, arquitecturas rápidas sin plantillas pesadas y diseños UI/UX de alta conversión.</p>
+                    <div class="footer-social">
+                        <a href="https://www.instagram.com/jhprogram_Designer" target="_blank" rel="noopener" class="footer-social-icon" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="3" y="3" width="18" height="18" rx="5" stroke="currentColor" stroke-width="1.8"/><circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="1.8"/><circle cx="17.2" cy="6.8" r="1.1" fill="currentColor"/></svg></a>
+                        <a href="mailto:jhprogram76@gmail.com" class="footer-social-icon" aria-label="Email"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="3" y="5" width="18" height="14" rx="2" stroke="currentColor" stroke-width="1.8"/><path d="M4 6.5L12 13L20 6.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+                       </div>
+                </div>
+                <div class="footer-col">
+                    <h4></h4>
+                    <ul class="footer-list">
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>CONTACTO DIRECTO</h4>
+                    <p class="footer-contact-line">Email: <a href="mailto:info@jhprogramstudio.com">info@jhprogramstudio.com</a></p>
+                    <p class="footer-contact-line">Horario: Lunes a Viernes 09:00 - 19:00 CET</p>
+                    <p class="footer-contact-line">Blanes, Girona.</p>
+                    <p class="footer-status"><span class="status-dot"></span>Respuesta media: &lt;4 horas</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 jhprogramstudio. Todos los derechos reservados. Designed &amp; Developed.</p>
+                <a href="#inicio" class="footer-top-link">Subir arriba ↑</a>
+            </div>
+        </footer>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>
