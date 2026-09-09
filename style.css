@@ -11,6 +11,26 @@
 .tap-to-enter { color: #a29bfe; margin-top: 25px; font-size: 14px; letter-spacing: 2px; text-transform: uppercase; opacity: 0.8; animation: parpadeo 2s infinite; }
 .fade-out { opacity: 0; visibility: hidden; }
 
+/* En escritorio, ballenita.mp4 es un vídeo vertical (9:16): en vez de recortarlo
+   a pantalla completa, lo mostramos entero como una "ventana" centrada sobre
+   el fondo oscuro. En móvil se mantiene a pantalla completa (cover). */
+@media (min-width: 769px) {
+    #bg-video, .video-overlay {
+        top: 50%;
+        left: 50%;
+        width: auto;
+        height: 88vh;
+        max-width: 92vw;
+        aspect-ratio: 9 / 16;
+        transform: translate(-50%, -50%);
+        object-fit: cover;
+        border-radius: 20px;
+    }
+    #bg-video {
+        box-shadow: 0 40px 90px rgba(0,0,0,0.65), 0 0 0 1px rgba(255,255,255,0.06);
+    }
+}
+
 /* 2. TRANSICIÓN Y NAVBAR */
 .site-content { opacity: 0; transform: translateY(20px); transition: opacity 1s ease 0.3s, transform 1s ease 0.3s; }
 .site-content.visible { opacity: 1; transform: translateY(0); }
