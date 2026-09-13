@@ -11,6 +11,23 @@
 .tap-to-enter { color: #a29bfe; margin-top: 25px; font-size: 14px; letter-spacing: 2px; text-transform: uppercase; opacity: 0.8; animation: parpadeo 2s infinite; }
 .fade-out { opacity: 0; visibility: hidden; }
 
+/* ---------- Sección "Sobre Nosotros" — bloque tipo revista, foto + texto ---------- */
+.about-section { background-color: #0b0b0c; padding: 120px 10%; }
+.about-container { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1.1fr; gap: 64px; align-items: center; }
+.about-media { position: relative; border-radius: 24px; overflow: hidden; aspect-ratio: 4/5; box-shadow: 0 30px 70px rgba(0,0,0,0.55); }
+.about-photo { width: 100%; height: 100%; object-fit: cover; filter: contrast(1.15) saturate(1.2) brightness(1.05); }
+.about-badge { display: inline-block; font-size: 11px; font-weight: 800; letter-spacing: 2px; color: #00ff66; background: rgba(0,255,102,.1); padding: 6px 14px; border-radius: 20px; margin-bottom: 20px; text-transform: uppercase; }
+.about-text h2 { font-size: 2.6rem; font-weight: 800; letter-spacing: -1px; margin-bottom: 24px; color: #ffffff; }
+.about-text p { font-size: 1.05rem; color: #a0a0a5; line-height: 1.8; margin-bottom: 18px; }
+.about-signature { font-size: 14px !important; color: #6a6a70 !important; border-top: 1px solid rgba(255,255,255,.08); padding-top: 20px; margin-top: 10px !important; }
+.about-signature em { color: #a29bfe; font-style: italic; }
+@media (max-width: 900px) {
+    .about-container { grid-template-columns: 1fr; gap: 36px; }
+    .about-section { padding: 80px 6%; }
+    .about-media { aspect-ratio: 16/10; }
+    .about-text h2 { font-size: 2.1rem; }
+}
+
 /* En escritorio, ballenita.mp4 es un vídeo vertical (9:16): en vez de recortarlo
    a pantalla completa, lo mostramos entero como una "ventana" centrada sobre
    el fondo oscuro. En móvil se mantiene a pantalla completa (cover). */
