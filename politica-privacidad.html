@@ -5,21 +5,58 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Política de Privacidad - JH Program Studio</title>
     <style>
-        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; line-height: 1.6; padding: 40px; max-width: 800px; margin: 0 auto; color: #333; background-color: #fafafa; }
-        h1, h3 { color: #007bff; }
+        @import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,420..700;1,9..144,420..600&family=Nunito:wght@400;600;700;800&display=swap');
+
+        :root{
+            --bg:#f6f3d9;
+            --paper:#fffdf3;
+            --ink:#27331c;
+            --ink-soft:#5c6b47;
+            --hoja:#6f9147;
+            --hoja-oscura:#48642d;
+            --menta:#cbe0a6;
+            --menta-linea:rgba(39,51,28,.16);
+            --menta-linea-fuerte:rgba(39,51,28,.3);
+            --rosa-oscuro:#e587a8;
+        }
+        *{box-sizing:border-box}
+        body{
+            font-family:'Nunito',ui-sans-serif,system-ui,sans-serif;
+            line-height:1.7;
+            padding:60px 24px 90px 24px;
+            max-width:760px;
+            margin:0 auto;
+            color:var(--ink);
+            background-color:var(--bg);
+            background-image:linear-gradient(var(--menta-linea) 1px,transparent 1px),linear-gradient(90deg,var(--menta-linea) 1px,transparent 1px);
+            background-size:28px 28px;
+        }
+        .volver{display:inline-block;margin-bottom:32px;font-size:13.5px;color:var(--ink-soft);text-decoration:none;border-bottom:1px solid transparent;transition:color .2s,border-color .2s}
+        .volver:hover{color:var(--hoja-oscura);border-color:var(--hoja-oscura)}
+        .hoja-legal{background:var(--paper);border:1px solid var(--menta-linea-fuerte);border-radius:22px 22px 22px 4px;padding:44px 40px;box-shadow:0 20px 50px rgba(39,51,28,.1)}
+        h1{font-family:'Fraunces',serif;font-weight:560;font-style:italic;font-size:2.4rem;letter-spacing:-.5px;color:var(--ink);margin-bottom:8px}
+        .fecha{font-size:12.5px;color:var(--ink-soft);margin-bottom:32px}
+        h3{font-family:'Fraunces',serif;font-weight:560;font-style:italic;font-size:1.3rem;color:var(--hoja-oscura);margin:32px 0 14px 0}
+        p{color:var(--ink-soft);margin-bottom:14px}
+        strong{color:var(--ink)}
+        a{color:var(--rosa-oscuro)}
     </style>
 </head>
 <body>
-    <h1>Política de Privacidad</h1>
-    <p>En JH Program Studio nos tomamos muy en serio la protección de los datos de nuestros usuarios. A continuación, detallamos de forma clara cómo tratamos la información recopilada en este sitio web.</p>
-    
-    <h3>1. Datos de Formularios de Contacto</h3>
-    <p>Cuando rellenas voluntariamente nuestro formulario para solicitar un presupuesto o detalles de un proyecto, recopilamos la información estrictamente necesaria (nombre, correo electrónico y detalles del negocio). Estos datos se utilizan únicamente con la finalidad de analizar tu propuesta y enviarte una respuesta comercial. No realizamos campañas de spam ni cedemos tus datos a terceros.</p>
-    
-    <h3>2. Cookies y Analítica Anónima</h3>
-    <p>Utilizamos <strong>Google Analytics 4</strong> mediante Cloudflare Zaraz para analizar el tráfico y rendimiento de la web. Los datos recogidos son completamente anónimos y estadísticos. No se activará ningún rastreo de comportamiento a menos que lo autorices expresamente en nuestro banner de consentimiento.</p>
-    
-    <h3>3. Derechos de Privacidad</h3>
-    <p>Tienes total derecho a solicitar que eliminemos o modifiquemos la información que nos hayas enviado a través del formulario de contacto. Para ejercer este derecho, simplemente escríbenos solicitándolo a nuestro correo oficial: <strong>info@jhprogramstudio.com</strong>.</p>
+    <a class="volver" href="index.html">&larr; Volver a jhprogram</a>
+    <div class="hoja-legal">
+        <h1>Política de Privacidad</h1>
+        <p class="fecha">JH Program Studio</p>
+        <p>En JH Program Studio nos tomamos muy en serio la protección de los datos de nuestros usuarios. A continuación, detallamos de forma clara cómo tratamos la información recopilada en este sitio web.</p>
+
+        <h3>1. Datos de Formularios de Contacto</h3>
+        <p>Cuando rellenas voluntariamente nuestro formulario para solicitar un presupuesto o detalles de un proyecto, recopilamos la información estrictamente necesaria (nombre, correo electrónico y detalles del negocio). Estos datos se utilizan únicamente con la finalidad de analizar tu propuesta y enviarte una respuesta comercial. No realizamos campañas de spam ni cedemos tus datos a terceros.</p>
+
+        <h3>2. Cookies y Analítica Anónima</h3>
+        <p>Utilizamos <strong>Google Analytics 4</strong> mediante Cloudflare Zaraz para analizar el tráfico y rendimiento de la web. Los datos recogidos son completamente anónimos y estadísticos. No se activará ningún rastreo de comportamiento a menos que lo autorices expresamente en nuestro banner de consentimiento.</p>
+
+        <h3>3. Derechos de Privacidad</h3>
+        <p>Tienes total derecho a solicitar que eliminemos o modifiquemos la información que nos hayas enviado a través del formulario de contacto. Para ejercer este derecho, simplemente escríbenos solicitándolo a nuestro correo oficial: <strong>info@jhprogramstudio.com</strong>.</p>
+    </div>
 </body>
 </html>

@@ -12,8 +12,23 @@
   gtag('config', 'G-GSQQEHWRJR');
 </script>
 
+<!-- Datos estructurados del vídeo de bienvenida (soluciona el aviso de Search Console: "No se ha proporcionado ninguna URL de la miniatura") -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "VideoObject",
+  "name": "Intro animada jhprogram studio",
+  "description": "Vídeo de bienvenida de la web de jhprogram studio, estudio de desarrollo web a medida.",
+  "thumbnailUrl": [
+    "https://TU-DOMINIO.com/ballenita-poster.jpg"
+  ],
+  "uploadDate": "2026-01-01T08:00:00+01:00",
+  "contentUrl": "https://TU-DOMINIO.com/ballenita.mp4"
+}
+</script>
+
 <body>
-    <div id="intro-overlay" class="intro-container" onclick="entrarALaWeb()"><video autoplay muted loop playsinline id="bg-video"><source src="ballenita.mp4" type="video/mp4"></video><div class="video-overlay"></div><div class="logo-central"><p class="tap-to-enter">Toca la ballenita</p></div></div>
+    <div id="intro-overlay" class="intro-container" onclick="entrarALaWeb()"><video autoplay muted loop playsinline poster="ballenita-poster.jpg" id="bg-video"><source src="ballenita.mp4" type="video/mp4"></video><div class="video-overlay"></div><div class="logo-central"><p class="tap-to-enter">Toca la ballenita</p></div></div>
     <main id="main-content" class="site-content">
         <!-- NAVBAR ESTILO PORTAFOLIO (CREMA) -->
         <nav class="navbar portfolio-nav">
@@ -177,12 +192,10 @@
                         </div>
                 </div>
                 <div class="footer-col">
-                    <h4></h4>
+                    <h4>Legal</h4>
                     <ul class="footer-list">
-                        <li></li>
-                        <li></li>
-                        <li></li>
-                        <li></li>
+                        <li><a href="aviso-legal.html">Aviso legal</a></li>
+                        <li><a href="politica-privacidad.html">Política de privacidad</a></li>
                     </ul>
                 </div>
                 <div class="footer-col">

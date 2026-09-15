@@ -1,57 +1,64 @@
 /* ============================================================
    PORTAFOLIO — jhprogram
-   Registro visual: papel de plano técnico. Fondo crema, cuadrícula
-   fina de precisión (nod a "precisión milimétrica" de la home),
-   fichas montadas como láminas de un dossier, mucho aire entre
-   piezas para que la página respire.
+   Misma ficha de tokens que la home (vivero editorial):
+   fondo cítrico pálido, tinta verde botánica, acentos en
+   verde/limón/rosa. Las fichas de proyecto se mantienen como
+   láminas de dossier, ahora sobre papel claro en vez de crema-óxido.
    ============================================================ */
 
-@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,340..600;1,9..144,400..500&family=JetBrains+Mono:wght@400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,420..700;1,9..144,420..600&family=Nunito:wght@400;600;700;800&display=swap');
 
 :root{
-    --cream:#f2ead6;
-    --cream-deep:#e9dfc2;
-    --ink:#211c14;
-    --ink-soft:#635c49;
-    --rule:rgba(33,28,20,.16);
-    --rule-strong:rgba(33,28,20,.32);
-    --oxide:#a4351f;
+    --bg:#f6f3d9;
+    --bg-soft:#e9efc4;
+    --paper:#fffdf3;
+    --ink:#27331c;
+    --ink-soft:#5c6b47;
+    --hoja:#6f9147;
+    --hoja-oscura:#48642d;
+    --menta:#cbe0a6;
+    --menta-linea:rgba(39,51,28,.16);
+    --menta-linea-fuerte:rgba(39,51,28,.3);
+    --limon:#f3d24e;
+    --limon-oscuro:#d9ac1e;
+    --mantequilla:#fbecae;
+    --rosa:#f6b8ce;
+    --rosa-oscuro:#e587a8;
+    --rosa-suave:#fbe0ea;
 }
 
 *{margin:0;padding:0;box-sizing:border-box}
 
 body{
-    background-color:var(--cream);
+    background-color:var(--bg);
     background-image:
-        linear-gradient(var(--rule) 1px,transparent 1px),
-        linear-gradient(90deg,var(--rule) 1px,transparent 1px),
-        linear-gradient(var(--rule-strong) 1px,transparent 1px),
-        linear-gradient(90deg,var(--rule-strong) 1px,transparent 1px);
-    background-size:28px 28px,28px 28px,140px 140px,140px 140px;
+        linear-gradient(var(--menta-linea) 1px,transparent 1px),
+        linear-gradient(90deg,var(--menta-linea) 1px,transparent 1px);
+    background-size:28px 28px;
     color:var(--ink);
-    font-family:'JetBrains Mono',ui-monospace,Consolas,monospace;
+    font-family:'Nunito',ui-sans-serif,system-ui,sans-serif;
     -webkit-font-smoothing:antialiased;
 }
 
 a{color:inherit}
 
-/* ---------- Navbar (versión clara, reutiliza los ids del script.js) ---------- */
+/* ---------- Navbar ---------- */
 .navbar{
     display:flex;justify-content:space-between;align-items:center;
     padding:22px 8%;
-    background:rgba(242,234,214,.9);
+    background:rgba(246,243,217,.92);
     backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);
-    border-bottom:1px solid var(--rule-strong);
+    border-bottom:1px solid var(--menta-linea-fuerte);
     position:sticky;top:0;z-index:100;
 }
 .nav-brand-link{display:flex;align-items:baseline;gap:8px;text-decoration:none}
-.nav-brand-text{font-family:'Fraunces',serif;font-weight:600;font-size:20px;color:var(--ink)}
-.nav-brand-badge{font-size:11px;letter-spacing:1.5px;color:var(--ink-soft)}
+.nav-brand-text{font-family:'Fraunces',serif;font-weight:600;font-style:italic;font-size:20px;color:var(--ink)}
+.nav-brand-badge{font-size:11px;letter-spacing:1px;color:var(--hoja-oscura);background:rgba(111,145,71,.14);padding:3px 9px;border-radius:20px}
 .nav-links{display:flex;align-items:center}
 .nav-links a{text-decoration:none;color:var(--ink-soft);font-size:14px;margin-left:28px;padding-bottom:3px;border-bottom:1px solid transparent;transition:color .2s,border-color .2s}
-.nav-links a:hover{color:var(--ink)}
-.nav-links a.active{color:var(--oxide);border-color:var(--oxide)}
-.nav-toggle{display:none;flex-direction:column;justify-content:center;align-items:center;gap:5px;width:38px;height:38px;background:transparent;border:1px solid var(--rule-strong);border-radius:0;cursor:pointer}
+.nav-links a:hover{color:var(--hoja-oscura)}
+.nav-links a.active{color:var(--rosa-oscuro);border-color:var(--rosa-oscuro)}
+.nav-toggle{display:none;flex-direction:column;justify-content:center;align-items:center;gap:5px;width:38px;height:38px;background:transparent;border:1px solid var(--menta-linea-fuerte);border-radius:10px;cursor:pointer}
 .nav-toggle span{display:block;width:18px;height:1.5px;background:var(--ink);transition:transform .3s,opacity .3s}
 .nav-toggle.open span:nth-child(1){transform:translateY(6.5px) rotate(45deg)}
 .nav-toggle.open span:nth-child(2){opacity:0}
@@ -62,23 +69,23 @@ a{color:inherit}
     .nav-toggle{display:flex}
     .nav-links{
         position:fixed;top:0;right:0;height:100vh;width:min(78vw,320px);
-        background:var(--cream);border-left:1px solid var(--rule-strong);
+        background:var(--bg);border-left:1px solid var(--menta-linea-fuerte);
         flex-direction:column;align-items:flex-start;justify-content:center;gap:6px;
         padding:100px 32px 40px 32px;
         transform:translateX(100%);transition:transform .4s cubic-bezier(.16,1,.3,1);
         z-index:150;
     }
     .nav-links.open{transform:translateX(0)}
-    .nav-links a{margin-left:0;font-size:16px;padding:14px 0;width:100%;border-bottom:1px solid var(--rule)}
-    .nav-backdrop.open{display:block;position:fixed;inset:0;background:rgba(33,28,20,.35);z-index:140}
+    .nav-links a{margin-left:0;font-size:16px;padding:14px 0;width:100%;border-bottom:1px solid var(--menta-linea)}
+    .nav-backdrop.open{display:block;position:fixed;inset:0;background:rgba(39,51,28,.35);z-index:140}
 }
 
-/* ---------- Encabezado tipo "cajetín" de plano ---------- */
+/* ---------- Encabezado ---------- */
 .sheet{max-width:1180px;margin:0 auto;padding:0 8% 100px 8%}
 .sheet-header{padding-top:72px;max-width:640px}
 .sheet-meta{
-    font-size:12px;letter-spacing:1.5px;color:var(--ink-soft);
-    padding-bottom:14px;margin-bottom:24px;border-bottom:1px solid var(--rule-strong);
+    font-size:12px;letter-spacing:1px;color:var(--ink-soft);
+    padding-bottom:14px;margin-bottom:24px;border-bottom:1px solid var(--menta-linea-fuerte);
 }
 .sheet-header h1{
     font-family:'Fraunces',serif;font-weight:560;font-style:italic;
@@ -87,7 +94,7 @@ a{color:inherit}
 }
 .sheet-intro{font-size:14.5px;line-height:1.8;color:var(--ink-soft);max-width:52ch}
 
-/* ---------- Fichas de proyecto — composición editorial: foto de resultado + foto de proceso ---------- */
+/* ---------- Fichas de proyecto ---------- */
 .plates{
     margin-top:80px;
     display:flex;flex-direction:column;
@@ -99,22 +106,17 @@ a{color:inherit}
 .plate-frame{
     position:relative;
     padding:14px;
-    background:var(--cream-deep);
-    border:1px solid var(--rule-strong);
+    background:var(--paper);
+    border:1px solid var(--menta-linea-fuerte);
+    border-radius:18px 18px 4px 18px;
 }
 .plate-frame::before,.plate-frame::after,
 .plate-frame img{display:block}
-.plate-frame img{width:100%;aspect-ratio:4/3;object-fit:cover}
-/* marcas de escuadra en las esquinas — el único gesto decorativo de la página */
-.plate-frame::before,.plate-frame::after{
-    content:"";position:absolute;width:16px;height:16px;
-    border-color:var(--ink);border-style:solid;border-width:0;
-}
-.plate-frame::before{top:-1px;left:-1px;border-top-width:2px;border-left-width:2px}
-.plate-frame::after{bottom:-1px;right:-1px;border-bottom-width:2px;border-right-width:2px}
+.plate-frame img{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:10px 10px 2px 10px}
 .plate-frame-process{
     position:absolute;width:46%;bottom:-34px;left:-34px;z-index:2;
-    box-shadow:0 20px 40px rgba(33,28,20,.35);
+    box-shadow:0 20px 40px rgba(39,51,28,.22);
+    border-radius:14px 14px 4px 14px;
 }
 .plate-frame-process img{aspect-ratio:1/1}
 .plate:nth-child(even) .plate-frame-process{left:auto;right:-34px}
@@ -126,17 +128,16 @@ a{color:inherit}
     font-size:12px;color:var(--ink-soft);flex-shrink:0;padding-top:2px;
 }
 .plate-category{
-    display:block;font-size:11px;letter-spacing:1.5px;text-transform:uppercase;
-    color:var(--oxide);margin-bottom:6px;
+    display:block;font-size:12px;
+    color:var(--rosa-oscuro);margin-bottom:6px;font-weight:700;
 }
 .plate-text h2{
-    font-family:'Fraunces',serif;font-weight:560;font-size:28px;
+    font-family:'Fraunces',serif;font-weight:560;font-style:italic;font-size:28px;
     margin-bottom:12px;color:var(--ink);
 }
 .plate-text p{font-size:14.5px;line-height:1.7;color:var(--ink-soft);margin-bottom:16px;max-width:34ch}
 .plate-stack{list-style:none;display:flex;flex-wrap:wrap;gap:8px 14px}
-.plate-stack li{font-size:11.5px;color:var(--ink-soft)}
-.plate-stack li:not(:last-child)::after{content:" /";margin-left:14px;color:var(--rule-strong)}
+.plate-stack li{font-size:11.5px;color:var(--hoja-oscura);background:var(--menta);padding:4px 10px;border-radius:20px}
 
 @media (max-width:820px){
     .plates{gap:100px}
@@ -148,9 +149,9 @@ a{color:inherit}
 
 /* ---------- Pie ---------- */
 .sheet-footer{
-    margin-top:120px;padding-top:24px;border-top:1px solid var(--rule-strong);
+    margin-top:120px;padding-top:24px;border-top:1px solid var(--menta-linea-fuerte);
     display:flex;flex-wrap:wrap;gap:16px;justify-content:space-between;
     font-size:12.5px;color:var(--ink-soft);
 }
 .sheet-footer a{text-decoration:underline;text-underline-offset:3px;color:var(--ink-soft);transition:color .2s}
-.sheet-footer a:hover{color:var(--oxide)}
+.sheet-footer a:hover{color:var(--hoja-oscura)}
