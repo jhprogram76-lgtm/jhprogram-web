@@ -4,201 +4,270 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>jhprogram | Studio</title>
-    <style>
-        body { font-family: Arial, sans-serif; line-height: 1.6; padding: 20px; max-width: 1000px; margin: 0 auto; color: #333; }
-        header, section, footer { padding: 20px 0; margin-bottom: 20px; border-bottom: 1px solid #eee; }
-        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 100px)); gap: 20px; }
-        .card { padding: 15px; border: 1px solid #ddd; border-radius: 5px; background: #fff; }
-        .btn { background: #007bff; color: white; padding: 10px 20px; border: none; cursor: pointer; text-decoration: none; display: inline-block; margin-top: 10px; }
-        form label { display: block; margin: 10px 0 5px; font-weight: bold; }
-        form input, form select, form textarea { width: 100%; padding: 8px; margin-bottom: 10px; border: 1px solid #ccc; border-radius: 4px; box-sizing: border-box; }
-        .legal-checkbox { display: flex; align-items: center; gap: 10px; margin: 15px 0; }
-        .legal-checkbox input { width: auto; margin: 0; }
-        footer a { color: #007bff; text-decoration: none; margin: 0 10px; }
-    </style>
-    <!-- SCRIPT DE RESPALDO DE CLOUDFLARE ZARAZ -->
+    <!-- ENLACE TÉCNICO DIRECTO PARA EL BANNER DE CLOUDFLARE ZARAZ -->
     <script src="/cdn-cgi/zaraz/i.js" defer></script>
+    <style>
+        :root { --bg-color: #0b0f19; --card-bg: #151c2c; --text-color: #f3f4f6; --text-muted: #9ca3af; --primary: #3b82f6; --primary-hover: #2563eb; --border: rgba(255,255,255,0.05); }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background-color: var(--bg-color); color: var(--text-color); line-height: 1.6; overflow-x: hidden; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 2rem; }
+        header { padding: 2rem 0; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid var(--border); }
+        .logo-area { display: flex; align-items: center; gap: 0.75rem; text-decoration: none; color: white; font-weight: 700; font-size: 1.25rem; }
+        .whale-container { position: relative; width: 45px; height: 45px; cursor: pointer; transition: transform 0.3s ease; }
+        .whale-container:hover { transform: scale(1.1); }
+        .nav-links { display: flex; gap: 2rem; list-style: none; }
+        .nav-links a { color: var(--text-muted); text-decoration: none; font-size: 0.95rem; transition: color 0.2s; }
+        .nav-links a:hover { color: white; }
+        .hero { padding: 6rem 0; text-align: center; background: radial-gradient(circle at top, rgba(59,130,246,0.1), transparent 50%); }
+        .hero h1 { font-size: 3.5rem; font-weight: 800; letter-spacing: -0.025em; line-height: 1.1; margin-bottom: 1.5rem; background: linear-gradient(to right, #fff, #9ca3af); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .hero p { font-size: 1.25rem; color: var(--text-muted); max-width: 700px; margin: 0 auto 2.5rem; }
+        .btn { display: inline-block; background-color: var(--primary); color: white; padding: 0.875rem 2rem; border-radius: 0.5rem; font-weight: 600; text-decoration: none; transition: background 0.2s, transform 0.2s; border: none; cursor: pointer; }
+        .btn:hover { background-color: var(--primary-hover); transform: translateY(-2px); }
+        .section-title { font-size: 2.25rem; font-weight: 700; text-align: center; margin-bottom: 1rem; color: white; }
+        .section-subtitle { text-align: center; color: var(--text-muted); margin-bottom: 4rem; font-size: 1.1rem; }
+        .about { padding: 6rem 0; border-top: 1px solid var(--border); }
+        .about-content { max-width: 800px; margin: 0 auto; text-align: center; }
+        .about p { font-size: 1.15rem; color: var(--text-muted); margin-bottom: 2rem; }
+        .quote { font-style: italic; color: var(--primary); font-size: 1.25rem; margin-top: 2rem; }
+        .services { padding: 6rem 0; border-top: 1px solid var(--border); }
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 2rem; }
+        .card { background-color: var(--card-bg); padding: 2.5rem; border-radius: 0.75rem; border: 1px solid var(--border); transition: transform 0.3s, box-shadow 0.3s; }
+        .card:hover { transform: translateY(-5px); box-shadow: 0 10px 30px rgba(0,0,0,0.3); }
+        .card-icon { font-size: 2rem; margin-bottom: 1.5rem; }
+        .card h3 { font-size: 1.5rem; margin-bottom: 1rem; font-weight: 600; color: white; }
+        .card p { color: var(--text-muted); margin-bottom: 1.5rem; font-size: 0.95rem; }
+        .card ul { list-style: none; color: var(--text-muted); font-size: 0.9rem; }
+        .card ul li { margin-bottom: 0.5rem; display: flex; align-items: center; gap: 0.5rem; }
+        .card ul li::before { content: "•"; color: var(--primary); font-weight: bold; }
+        .faq { padding: 6rem 0; border-top: 1px solid var(--border); }
+        .faq-max { max-width: 800px; margin: 0 auto; }
+        .faq-item { margin-bottom: 2.5rem; }
+        .faq-item h3 { font-size: 1.25rem; margin-bottom: 0.75rem; color: white; }
+        .faq-item p { color: var(--text-muted); }
+        .pricing { padding: 6rem 0; border-top: 1px solid var(--border); }
+        .featured-card { border: 2px solid var(--primary); position: relative; }
+        .featured-badge { position: absolute; top: -12px; right: 20px; background: var(--primary); color: white; padding: 0.25rem 0.75rem; border-radius: 1rem; font-size: 0.75rem; font-weight: 700; }
+        .price { font-size: 2.5rem; font-weight: 800; color: white; margin: 1rem 0; }
+        .contact { padding: 6rem 0; border-top: 1px solid var(--border); background: linear-gradient(to bottom, transparent, rgba(59,130,246,0.03)); }
+        form { max-width: 650px; margin: 0 auto; background: var(--card-bg); padding: 3rem; border-radius: 1rem; border: 1px solid var(--border); }
+        form label { display: block; margin-bottom: 0.5rem; font-size: 0.9rem; font-weight: 600; color: var(--text-color); }
+        form input, form select, form textarea { width: 100%; padding: 0.875rem; background-color: var(--bg-color); border: 1px solid var(--border); border-radius: 0.5rem; color: white; font-size: 1rem; margin-bottom: 1.75rem; transition: border 0.2s; }
+        form input:focus, form select:focus, form textarea:focus { outline: none; border-color: var(--primary); }
+        .legal-checkbox { display: flex; align-items: flex-start; gap: 0.75rem; margin-bottom: 2rem; text-align: left; }
+        .legal-checkbox input { width: auto; margin-top: 0.25rem; cursor: pointer; }
+        .legal-checkbox label { font-size: 0.9rem; color: var(--text-muted); font-weight: normal; cursor: pointer; }
+        .legal-checkbox a { color: var(--primary); text-decoration: underline; }
+        footer { padding: 4rem 0; border-top: 1px solid var(--border); text-align: center; color: var(--text-muted); font-size: 0.9rem; }
+        footer p { margin-bottom: 1rem; }
+        footer a { color: var(--primary); text-decoration: none; transition: color 0.2s; margin: 0 0.5rem; }
+        footer a:hover { color: white; text-decoration: underline; }
+    </style>
 </head>
 <body>
 
-    <header>
-        <p>Toca la ballenita 🐋</p>
-        <nav><strong>Nosotros | Servicios | Portafolio | FAQ | Contacto</strong></nav>
-        <h1>Código sólido. Diseños magníficos.</h1>
-        <p><strong>Creamos soluciones digitales a medida y sin intermediarios. Sitios web y aplicaciones, optimizadas para cargar al instante y transformar tus visitas en clientes fieles.</strong></p>
-        <a href="#contacto" class="btn">Hablemos de tu proyecto</a>
-    </header>
-
-    <section>
-        <h2>Sobre Nosotros</h2>
-        <p>Desde 2026 empezamos jhprogramstudio con una idea simple: crear webs a medida sin las complicaciones ni el precio de una agencia tradicional. Seguimos formándonos cada día en desarrollo web y ciberseguridad para ofrecerte no solo una web bonita, sino un código sólido, seguro y pensado para crecer contigo.</p>
-        <p><em>jhprogramstudio — designed & developed by la Ballenita</em></p>
-        <blockquote>"La simplicidad es la máxima sofisticación. Construimos con precisión milimétrica."</blockquote>
+    <div class="container">
+        <header>
+            <a href="#" class="logo-area">
+                <div class="whale-container">🐋</div>
+                <span>jhprogram | Studio</span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="#nosotros">Nosotros</a></li>
+                <li><a href="#servicios">Servicios</a></li>
+                <li><a href="#faq">FAQ</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+            </ul>
+        </header>
+    </div>
+    <section class="hero">
+        <div class="container">
+            <h1>Código sólido.<br>Diseños magníficos.</h1>
+            <p>Creamos soluciones digitales a medida y sin intermediarios. Sitios web y aplicaciones, optimizadas para cargar al instante y transformar tus visitas en clientes fieles.</p>
+            <a href="#contacto" class="btn">Hablemos de tu proyecto</a>
+        </div>
     </section>
 
-    <section>
-        <h2>¿Qué hacemos en el Studio?</h2>
-        <p><strong>Web, marketing y branding bajo un mismo techo. Proyectos web desde 350€</strong></p>
-        <div class="grid">
-            <div class="card">
-                <h3>💻 Desarrollos Web a Medida</h3>
-                <p>Páginas corporativas, landing pages de alta conversión y aplicaciones web robustas construidas con código limpio.</p>
-                <ul>
-                    <li>Código nativo y frameworks</li>
-                    <li>Arquitecturas web optimizadas</li>
-                </ul>
-            </div>
-            <div class="card">
-                <h3>🎨 Diseños de Interfaz (UI/UX)</h3>
-                <p>Estructuramos experiencias visuales intuitivas que guían al usuario hacia la acción y fieles a tu identidad.</p>
-                <ul>
-                    <li>Prototipados interactivos previos</li>
-                    <li>Interfaces adaptadas a móviles</li>
-                </ul>
-            </div>
-            <div class="card">
-                <h3>⚡ Optimizaciones</h3>
-                <p>Analizamos, limpiamos y aceleramos tu sitio para garantizar las máximas puntuaciones en Google PageSpeed.</p>
-                <ul>
-                    <li>Auditorías de rendimiento</li>
-                    <li>Compresiones de recursos</li>
-                </ul>
-            </div>
-            <div class="card">
-                <h3>📈 Marketing Digital</h3>
-                <p>Diseñamos estrategias que llevan tráfico real a tu web y lo convierten en clientes, con datos en lugar de suposiciones.</p>
-                <ul>
-                    <li>SEO y posicionamiento en buscadores</li>
-                    <li>Gestión de campañas y redes sociales</li>
-                </ul>
-            </div>
-            <div class="card">
-                <h3>✨ Branding e Identidad Visual</h3>
-                <p>Construimos una imagen de marca coherente y memorable, desde el logotipo hasta cada pieza que ve tu cliente.</p>
-                <ul>
-                    <li>Diseño de logotipo y paleta de marca</li>
-                    <li>Manual de identidad visual</li>
-                </ul>
+    <section class="about" id="nosotros">
+        <div class="container">
+            <h2 class="section-title">Sobre Nosotros</h2>
+            <p class="section-subtitle">Meticulous Craftsmanship</p>
+            <div class="about-content">
+                <p>Desde 2026 empezamos jhprogramstudio con una idea simple: crear webs a medida sin las complicaciones ni el precio de una agencia tradicional. Seguimos formándonos cada día en desarrollo web y ciberseguridad para ofrecerte no solo una web bonita, sino un código sólido, seguro y pensado para crecer contigo.</p>
+                <p style="color: white; font-weight: 500;">jhprogramstudio — <em>designed & developed by la Ballenita</em></p>
+                <p class="quote">"La simplicidad es la máxima sofisticación. Construimos con precisión milimétrica."</p>
             </div>
         </div>
     </section>
 
-    <section>
-        <h2>Preguntas Frecuentes</h2>
-        <div class="card">
-            <h4>¿Cuánto tiempo tardáis en entregar un proyecto?</h4>
-            <p>Una Landing Page de alta conversión o web corporativa base suele requerir entre 1 y 2 semanas. Una tienda online configurada o una aplicación web a medida toma entre 3 y 5 semanas, dependiendo de la cantidad de funciones e integraciones solicitadas.</p>
-            
-            <h4>¿Tenemos que pagar todo el proyecto de golpe?</h4>
-            <p>No. Trabajamos habitualmente con un esquema de hitos 50/50: un depósito inicial del 50% para arrancar la fase de arquitectura, diseño y desarrollo, y el 50% restante una vez que el sitio está completamente terminado, testeado en tus dispositivos y validado a tu satisfacción.</p>
-            
-            <h4>¿Qué pasa con el hosting y el dominio web?</h4>
-            <p>Te asesoramos de forma 100% gratuita para elegir el mejor proveedor a tu nombre (Vercel, Cloudflare, Namecheap, etc.). Así mantienes el control absoluto y la propiedad legal de tu sitio web sin depender de ningún intermediario.</p>
-            
-            <h4>¿Qué pasa si queremos hacer cambios en el futuro?</h4>
-            <p>Al finalizar te entregamos un sitio web totalmente documentado y gestionable para que puedas modificar textos o fotos fácilmente.</p>
+    <section class="services" id="servicios">
+        <div class="container">
+            <h2 class="section-title">¿Qué hacemos en el Studio?</h2>
+            <p class="section-subtitle">Web, marketing y branding bajo un mismo techo. Proyectos desde 350€</p>
+            <div class="grid">
+                <div class="card">
+                    <div class="card-icon">💻</div>
+                    <h3>Desarrollos Web a Medida</h3>
+                    <p>Páginas corporativas, landing pages de alta conversión y aplicaciones web robustas construidas con código limpio.</p>
+                    <ul>
+                        <li>Código nativo y frameworks</li>
+                        <li>Arquitecturas web optimizadas</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <div class="card-icon">🎨</div>
+                    <h3>Diseños de Interfaz (UI/UX)</h3>
+                    <p>Estructuramos experiencias visuales intuitivas que guían al usuario hacia la acción y fieles a tu identidad.</p>
+                    <ul>
+                        <li>Prototipados interactivos previos</li>
+                        <li>Interfaces adaptadas a móviles</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <div class="card-icon">⚡</div>
+                    <h3>Optimizaciones (WPO)</h3>
+                    <p>Analizamos, limpiamos y aceleramos tu sitio para garantizar las máximas puntuaciones en Google PageSpeed.</p>
+                    <ul>
+                        <li>Auditorías de rendimiento</li>
+                        <li>Compresiones de recursos y limpieza</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <div class="card-icon">📈</div>
+                    <h3>Marketing Digital</h3>
+                    <p>Diseñamos estrategias que llevan tráfico real a tu web y lo convierten en clientes, con datos en lugar de suposiciones.</p>
+                    <ul>
+                        <li>SEO y posicionamiento en buscadores</li>
+                        <li>Gestión de campañas y redes sociales</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <div class="card-icon">✨</div>
+                    <h3>Branding e Identidad</h3>
+                    <p>Construimos una imagen de marca coherente y memorable, desde el logotipo hasta cada pieza que ve tu cliente.</p>
+                    <ul>
+                        <li>Diseño de logotipo y paleta de marca</li>
+                        <li>Manual de identidad visual corporativa</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="faq" id="faq">
+        <div class="container faq-max">
+            <h2 class="section-title">Preguntas Frecuentes</h2>
+            <p class="section-subtitle">Transparencia Total. Todo lo que necesitas saber sobre plazos, pagos y mantenimientos.</p>
+            <div class="faq-item">
+                <h3>¿Cuánto tiempo tardáis en entregar un proyecto?</h3>
+                <p>Una Landing Page de alta conversión o web corporativa base suele requerir entre 1 y 2 semanas. Una tienda online configurada o una aplicación web a medida toma entre 3 y 5 semanas, dependiendo de la complejidad técnica requerida.</p>
+            </div>
+            <div class="faq-item">
+                <h3>¿Tenemos que pagar todo el proyecto de golpe?</h3>
+                <p>No. Trabajamos habitualmente con un esquema de hitos 50/50: un depósito inicial del 50% para arrancar el desarrollo, y el 50% restante una vez que el sitio está completamente terminado y validado a tu satisfacción.</p>
+            </div>
+            <div class="faq-item">
+                <h3>¿Qué pasa con el hosting y el dominio web?</h3>
+                <p>Te asesoramos de forma 100% gratuita para elegir el mejor proveedor a tu nombre (Vercel, Cloudflare, Namecheap, etc.). Así mantienes el control absoluto y la propiedad legal de tu sitio sin depender de intermediarios.</p>
+            </div>
         </div>
     </section>
 
-    <section>
-        <h2>Planes de soporte y evolución web mensual</h2>
-        <div class="grid">
-            <div class="card">
-                <h4>Plan Esencial</h4>
-                <p><strong>45€/mes</strong></p>
-                <ul>
-                    <li>Actualizaciones continuas de seguridad y dependencias</li>
-                    <li>Copias de seguridad semanales en servidores externos</li>
-                    <li>Monitorización de caídas en tiempo real 24/7</li>
-                    <li>Soporte técnico por correo electrónico</li>
-                </ul>
-            </div>
-            <div class="card" style="border: 2px solid #007bff;">
-                <h4>⭐ Plan Activo (Más Elegido)</h4>
-                <p><strong>79€/mes</strong></p>
-                <ul>
-                    <li>Todo lo incluido en el Plan Esencial</li>
-                    <li>Copias de seguridad diarias automatizadas</li>
-                    <li>Revisiones manuales periódicas de código y rendimiento</li>
-                    <li>1 hora mensual incluida para cambios de contenido o diseño</li>
-                    <li>Atención prioritaria por WhatsApp directo</li>
-                </ul>
-            </div>
-            <div class="card">
-                <h4>E-Commerce & Pro</h4>
-                <p><strong>149€/mes</strong></p>
-                <ul>
-                    <li>Soporte técnico preferente con respuesta urgente</li>
-                    <li>Monitorizaciones continuas de pasarelas de pago y stock</li>
-                    <li>Optimizaciones de rendimiento WPO mensuales continuas</li>
-                    <li>2 horas mensuales incluidas para cambios y promociones</li>
-                </ul>
+    <section class="pricing">
+        <div class="container">
+            <h2 class="section-title">Planes de Soporte Mensual</h2>
+            <p class="section-subtitle">Mantén tu infraestructura técnica actualizada, monitorizada y libre de errores.</p>
+            <div class="grid">
+                <div class="card">
+                    <h3>Plan Esencial</h3>
+                    <div class="price">45€<span style="font-size:1rem; color:var(--text-muted)">/mes</span></div>
+                    <ul>
+                        <li>Actualizaciones de seguridad continuas</li>
+                        <li>Copias de seguridad semanales</li>
+                        <li>Monitorización en tiempo real 24/7</li>
+                    </ul>
+                </div>
+                <div class="card featured-card">
+                    <div class="featured-badge">Más Elegido</div>
+                    <h3>Plan Activo</h3>
+                    <div class="price">79€<span style="font-size:1rem; color:var(--text-muted)">/mes</span></div>
+                    <ul>
+                        <li>Copias de seguridad diarias</li>
+                        <li>1 hora mensual para cambios de diseño</li>
+                        <li>Atención prioritaria por WhatsApp directo</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <h3>E-Commerce & Pro</h3>
+                    <div class="price">149€<span style="font-size:1rem; color:var(--text-muted)">/mes</span></div>
+                    <ul>
+                        <li>Soporte técnico preferente urgente</li>
+                        <li>Monitorización continua de pasarelas de pago</li>
+                        <li>Informes de rendimiento mensuales</li>
+                    </ul>
+                </div>
             </div>
         </div>
     </section>
 
-    <section id="contacto">
-        <h2>Detalles del Proyecto & Contacto</h2>
-        <p>Rellena este cuestionario en 1 minuto. Nos permite analizar tu proyecto antes de reunirnos y darte una propuesta exacta.</p>
-        
-        <form action="#" method="POST">
-            <label for="nombre">Tu Nombre Completo *</label>
-            <input type="text" id="nombre" name="nombre" required>
+    <section class="contact" id="contacto">
+        <div class="container">
+            <h2 class="section-title">Detalles del Proyecto & Contacto</h2>
+            <p class="section-subtitle">Rellena este cuestionario en 1 minuto. Respuesta en <24h</p>
+            
+            <form action="#" method="POST">
+                <label for="nombre">Tu Nombre Completo *</label>
+                <input type="text" id="nombre" name="nombre" required>
 
-            <label for="email">Tu Correo Fletrónico *</label>
-            <input type="email" id="email" name="email" required>
+                <label for="email">Tu Correo Electrónico *</label>
+                <input type="email" id="email" name="email" required>
 
-            <label for="tel">Teléfono / WhatsApp (Opcional)</label>
-            <input type="tel" id="tel" name="tel">
+                <label for="tel">Teléfono / WhatsApp (Opcional)</label>
+                <input type="tel" id="tel" name="tel">
 
-            <label for="marca">Nombre de tu Empresa / Marca</label>
-            <input type="text" id="marca" name="marca">
+                <label for="solucion">Tipo de Solución Digital *</label>
+                <select id="solucion" name="solucion" required>
+                    <option value="">Selecciona una opción</option>
+                    <option value="landing">Landing Page de Alta Conversión (Desde 350€)</option>
+                    <option value="corporativa">Web Corporativa</option>
+                    <option value="ecommerce">Tienda Online / E-Commerce</option>
+                    <option value="medida">Aplicación Web a Medida</option>
+                </select>
 
-            <label for="solucion">Tipo de Solución Digital Seleccionada *</label>
-            <select id="solucion" name="solucion" required>
-                <option value="">Selecciona una opción</option>
-                <option value="landing">Landing Page de Alta Conversión (Desde 350€)</option>
-                <option value="corporativa">Web Corporativa</option>
-                <option value="ecommerce">Tienda Online / E-Commerce</option>
-                <option value="medida">Aplicación Web a Medida</option>
-            </select>
+                <label for="presupuesto">Rango de Presupuesto Estimado *</label>
+                <select id="presupuesto" name="presupuesto" required>
+                    <option value="">Selecciona un rango</option>
+                    <option value="400-800">400€ - 800€</option>
+                    <option value="800-1500">800€ - 1.500€</option>
+                    <option value="1500-3000">1.500€ - 3.000€</option>
+                    <option value="3000+">Más de 3.000€</option>
+                </select>
 
-            <label for="presupuesto">Rango de Presupuesto Estimado *</label>
-            <select id="presupuesto" name="presupuesto" required>
-                <option value="">Selecciona un rango</option>
-                <option value="400-800">400€ - 800€</option>
-                <option value="800-1500">800€ - 1.500€</option>
-                <option value="1500-3000">1.500€ - 3.000€</option>
-                <option value="3000+">Más de 3.000€</option>
-            </select>
+                <label for="detalles">Cuéntanos sobre tu negocio y objetivos *</label>
+                <textarea id="detalles" name="detalles" rows="4" required style="width:100%; background:var(--bg-color); border:1px solid var(--border); color:white; padding:15px; border-radius:0.5rem; margin-bottom:1.5rem; font-family: inherit; font-size: 1rem;"></textarea>
 
-            <label for="idea">¿En qué punto se encuentra tu idea? *</label>
-            <select id="idea" name="idea" required>
-                <option value="clara">Tengo la idea clara, falta programarla</option>
-                <option value="renovacion">Ya tengo web vieja y quiero renovarla</option>
-                <option value="asesoria">Es una idea inicial, necesito asesoría</option>
-            </select>
+                <!-- CASILLA DE PRIVACIDAD OBLIGATORIA DEL FORMULARIO -->
+                <div class="legal-checkbox">
+                    <input type="checkbox" id="acepto-privacidad" required>
+                    <label for="acepto-privacidad">He leído y acepto la <a href="/politica-privacidad.html" target="_blank">Política de Privacidad</a>.</label>
+                </div>
 
-            <label for="detalles">Cuéntanos sobre tu negocio y qué objetivos buscas con esta web *</label>
-            <textarea id="detalles" name="detalles" rows="4" required></textarea>
-
-            <div class="legal-checkbox">
-                <input type="checkbox" id="acepto-privacidad" required>
-                <label for="acepto-privacidad">He leído y acepto la <a href="/politica-privacidad.html" target="_blank">Política de Privacidad</a>.</label>
-            </div>
-
-            <input type="submit" value="Enviar Detalles del Proyecto" class="btn" style="width: auto;">
-        </form>
+                <input type="submit" value="Enviar Detalles del Proyecto" class="btn" style="width: 100%;">
+            </form>
+        </div>
     </section>
 
     <footer>
-        <p><strong>JH Program Studio</strong> — Estudiante independiente especializado en desarrollos web a medida, marketing digital y branding.</p>
-        <p>Email: info@jhprogramstudio.com | Horario: Lunes a Viernes 09:00 - 19:00 CET | Blanes, Girona.</p>
-        <p>
-            © 2026 jhprogramstudio. Todos los derechos reservados. 
-            | <a href="/aviso-legal.html">Aviso Legal</a> 
-            | <a href="/politica-privacidad.html">Política de Privacidad</a>
-        </p>
+        <div class="container">
+            <p><strong>JH Program Studio</strong> — Desarrollos web independientes a medida, marketing digital y branding sin intermediarios.</p>
+            <p>Email: info@jhprogramstudio.com | Blanes, Girona.</p>
+            <p style="margin-top: 1.5rem;">
+                © 2026 jhprogramstudio. Todos los derechos reservados.
+                <br><br>
+                <!-- ENLACES LEGALES PERMANENTES EN EL FOOTER -->
+                <a href="/aviso-legal.html">Aviso Legal</a> | 
+                <a href="/politica-privacidad.html">Política de Privacidad</a>
+            </p>
+        </div>
     </footer>
 
 </body>
