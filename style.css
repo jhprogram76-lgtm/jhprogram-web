@@ -12,7 +12,7 @@
            acción, todo lo demás vive en verdes y cremas.
    ============================================================ */
 
-@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,420..700;1,9..144,420..600&family=Nunito:wght@400;600;700;800&display=swap');
+/* Fuentes cargadas desde el <head> del HTML con <link rel="preconnect"> + <link rel="stylesheet"> — ver index.html. Quitar el @import evita que el navegador tenga que descargar y parsear el CSS antes de descubrir la fuente. */
 
 :root{
     --bg:#f7f3e6;

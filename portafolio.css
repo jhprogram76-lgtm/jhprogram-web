@@ -6,7 +6,7 @@
    láminas de dossier, ahora sobre papel claro en vez de crema-óxido.
    ============================================================ */
 
-@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,420..700;1,9..144,420..600&family=Nunito:wght@400;600;700;800&display=swap');
+/* Fuentes cargadas desde el <head> del HTML con <link rel="preconnect"> + <link rel="stylesheet"> — ver portafolio.html. */
 
 :root{
     --bg:#f7f3e6;
