@@ -3,7 +3,7 @@ function entrarALaWeb() {
     const mainContent = document.getElementById('main-content');
     
     if (intro) {
-        // Desvanece la intro
+        // Gira 180° y desvanece la intro
         intro.classList.add('fade-out');
         
         // Activa la visualización suave de la web principal
@@ -17,19 +17,6 @@ function entrarALaWeb() {
         }, 800); 
     }
 }
-
-// Arranca el vídeo de fondo DESPUÉS de que la página haya cargado.
-// El poster ya se pinta al instante (LCP rápido); el vídeo se descarga
-// y reproduce después, sin bloquear la métrica de rendimiento.
-window.addEventListener('load', () => {
-    const bgVideo = document.getElementById('bg-video');
-    if (bgVideo) {
-        bgVideo.play().catch(() => {
-            // Si el navegador bloquea el autoplay, se reproducirá
-            // en cuanto el usuario toque la pantalla (ver entrarALaWeb).
-        });
-    }
-});
 
 // Menú móvil (hamburguesa)
 document.addEventListener('DOMContentLoaded', () => {

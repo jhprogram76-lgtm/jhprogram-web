@@ -22,9 +22,9 @@
 <meta name="twitter:image" content="https://jhprogramstudio.com/logo2.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,420..700;1,9..144,420..600&family=Nunito:wght@400;600;700;800&display=swap">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,420..700;1,9..144,420..600&family=Nunito:wght@400;600;700;800&display=swap" media="print" onload="this.media='all'">
-<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,420..700;1,9..144,420..600&family=Nunito:wght@400;600;700;800&display=swap"></noscript>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,420..700;1,9..144,420..600&family=Nunito:wght@400;600;700;800&family=Great+Vibes&family=Dancing+Script:wght@600&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,420..700;1,9..144,420..600&family=Nunito:wght@400;600;700;800&family=Great+Vibes&family=Dancing+Script:wght@600&display=swap" media="print" onload="this.media='all'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,420..700;1,9..144,420..600&family=Nunito:wght@400;600;700;800&family=Great+Vibes&family=Dancing+Script:wght@600&display=swap"></noscript>
 <link rel="stylesheet" href="style.css">
 <script>if(location.hash){document.documentElement.classList.add('skip-intro');}</script>
 </head>
@@ -39,23 +39,18 @@
   gtag('config', 'G-GSQQEHWRJR');
 </script>
 
-<!-- Datos estructurados del vídeo de bienvenida (soluciona el aviso de Search Console: "No se ha proporcionado ninguna URL de la miniatura") -->
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "VideoObject",
-  "name": "Intro animada jhprogram studio",
-  "description": "Vídeo de bienvenida de la web de jhprogram studio, estudio de desarrollo web a medida.",
-  "thumbnailUrl": [
-    "https://jhprogramstudio.com/ballenita-poster.jpg"
-  ],
-  "uploadDate": "2026-01-01T08:00:00+01:00",
-  "contentUrl": "https://jhprogramstudio.com/ballenita.mp4"
-}
-</script>
-
 <body>
-    <div id="intro-overlay" class="intro-container" onclick="entrarALaWeb()"><video muted loop playsinline preload="none" poster="ballenita-poster.jpg" id="bg-video"><source src="ballenita.mp4" type="video/mp4"></video><div class="video-overlay"></div><div class="logo-central"><p class="tap-to-enter">Toca la ballenita</p></div></div>
+    <div id="intro-overlay" class="intro-container" onclick="entrarALaWeb()">
+        <div class="signature-stage">
+            <svg class="signature-svg" viewBox="0 0 1100 480" xmlns="http://www.w3.org/2000/svg">
+                <text class="sig-stroke" x="550" y="230" text-anchor="middle">jhprogramstudio</text>
+                <text class="sig-fill" x="550" y="230" text-anchor="middle">jhprogramstudio</text>
+                <line class="sig-line" x1="330" y1="285" x2="770" y2="285" />
+                <text class="sig-by" x="550" y="360" text-anchor="middle">by la ballenita</text>
+            </svg>
+            <p class="tap-to-enter">Toca para entrar</p>
+        </div>
+    </div>
     <main id="main-content" class="site-content">
         <!-- NAVBAR ESTILO PORTAFOLIO (CREMA) -->
         <nav class="navbar portfolio-nav">
