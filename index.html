@@ -20,12 +20,15 @@
 <meta name="twitter:title" content="jhprogram | Studio">
 <meta name="twitter:description" content="Desarrollo web a medida, marketing digital y branding.">
 <meta name="twitter:image" content="https://jhprogramstudio.com/logo2.png">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,420..700;1,9..144,420..600&family=Nunito:wght@400;600;700;800&family=Great+Vibes&family=Dancing+Script:wght@600&display=swap">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,420..700;1,9..144,420..600&family=Nunito:wght@400;600;700;800&family=Great+Vibes&family=Dancing+Script:wght@600&display=swap" media="print" onload="this.media='all'">
-<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,420..700;1,9..144,420..600&family=Nunito:wght@400;600;700;800&family=Great+Vibes&family=Dancing+Script:wght@600&display=swap"></noscript>
-<link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://googleapis.com">
+    <link rel="preconnect" href="https://gstatic.com" crossorigin>
+    <!-- Se añade &display=swap al final para evitar el bloqueo -->
+    <link rel="stylesheet" href="https://googleapis.com">
+
+    <!-- Carga asíncrona de tu CSS principal -->
+    <link rel="stylesheet" href="style.css" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="style.css"></noscript>
+
 <script>if(location.hash){document.documentElement.classList.add('skip-intro');}</script>
 </head>
 
@@ -234,6 +237,7 @@
             </div>
         </footer>
     </main>
-    <script src="script.js"></script>
+    <script src="script.js" defer></script>
+
 </body>
 </html>
