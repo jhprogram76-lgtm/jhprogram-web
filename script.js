@@ -18,6 +18,19 @@ function entrarALaWeb() {
     }
 }
 
+// Arranca el vídeo de fondo DESPUÉS de que la página haya cargado.
+// El poster ya se pinta al instante (LCP rápido); el vídeo se descarga
+// y reproduce después, sin bloquear la métrica de rendimiento.
+window.addEventListener('load', () => {
+    const bgVideo = document.getElementById('bg-video');
+    if (bgVideo) {
+        bgVideo.play().catch(() => {
+            // Si el navegador bloquea el autoplay, se reproducirá
+            // en cuanto el usuario toque la pantalla (ver entrarALaWeb).
+        });
+    }
+});
+
 // Menú móvil (hamburguesa)
 document.addEventListener('DOMContentLoaded', () => {
     const navToggle = document.getElementById('navToggle');

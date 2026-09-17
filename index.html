@@ -22,7 +22,9 @@
 <meta name="twitter:image" content="https://jhprogramstudio.com/logo2.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,420..700;1,9..144,420..600&family=Nunito:wght@400;600;700;800&display=swap">
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,420..700;1,9..144,420..600&family=Nunito:wght@400;600;700;800&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,420..700;1,9..144,420..600&family=Nunito:wght@400;600;700;800&display=swap" media="print" onload="this.media='all'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,420..700;1,9..144,420..600&family=Nunito:wght@400;600;700;800&display=swap"></noscript>
 <link rel="stylesheet" href="style.css">
 <script>if(location.hash){document.documentElement.classList.add('skip-intro');}</script>
 </head>
@@ -53,7 +55,7 @@
 </script>
 
 <body>
-    <div id="intro-overlay" class="intro-container" onclick="entrarALaWeb()"><video autoplay muted loop playsinline preload="auto" poster="ballenita-poster.jpg" id="bg-video"><source src="ballenita.mp4" type="video/mp4"></video><div class="video-overlay"></div><div class="logo-central"><p class="tap-to-enter">Toca la ballenita</p></div></div>
+    <div id="intro-overlay" class="intro-container" onclick="entrarALaWeb()"><video muted loop playsinline preload="none" poster="ballenita-poster.jpg" id="bg-video"><source src="ballenita.mp4" type="video/mp4"></video><div class="video-overlay"></div><div class="logo-central"><p class="tap-to-enter">Toca la ballenita</p></div></div>
     <main id="main-content" class="site-content">
         <!-- NAVBAR ESTILO PORTAFOLIO (CREMA) -->
         <nav class="navbar portfolio-nav">
@@ -166,8 +168,8 @@
                         </div>
                         <div class="qualifier-row">
                             <div class="qualifier-field">
-                                <label>Tipo de Solución Digital Seleccionada *</label>
-                                <select name="Tipo de solución" required>
+                                <label for="tipo-solucion">Tipo de Solución Digital Seleccionada *</label>
+                                <select name="Tipo de solución" id="tipo-solucion" required>
                                     <option value="" disabled selected>Selecciona una opción</option>
                                     <option>Landing Page de Alta Conversión (Desde 350€)</option>
                                     <option>Web Corporativa</option>
@@ -178,8 +180,8 @@
                                 </select>
                             </div>
                             <div class="qualifier-field">
-                                <label>Rango de Presupuesto Estimado *</label>
-                                <select name="Presupuesto estimado" required>
+                                <label for="presupuesto-estimado">Rango de Presupuesto Estimado *</label>
+                                <select name="Presupuesto estimado" id="presupuesto-estimado" required>
                                     <option value="" disabled selected>Selecciona un rango</option>
                                     <option>400€ - 800€</option>
                                     <option>800€ - 1.500€</option>
