@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://sitemaps.org">
+  <!-- Página de Inicio principal -->
+  <url>
+    <loc>https://jhprogramstudio.com</loc>
+    <lastmod>2026-09-18</lastmod>
+    <priority>1.00</priority>
+  </url>
+  <!-- Página del Portafolio -->
+  <url>
+    <loc>https://jhprogramstudio.comportafolio.html</loc>
+    <lastmod>2026-09-18</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <!-- Página de Aviso Legal -->
+  <url>
+    <loc>https://jhprogramstudio.comaviso-legal.html</loc>
+    <lastmod>2026-09-18</lastmod>
+    <priority>0.30</priority>
+  </url>
+  <!-- Página de Política de Privacidad -->
+  <url>
+    <loc>https://jhprogramstudio.compolitica-privacidad.html</loc>
+    <lastmod>2026-09-18</lastmod>
+    <priority>0.30</priority>
+  </url>
+  <!-- Página de Términos y Condiciones -->
+  <url>
+    <loc>https://jhprogramstudio.comterminos-condiciones.html</loc>
+    <lastmod>2026-09-18</lastmod>
+    <priority>0.30</priority>
+  </url>
+</urlset>
