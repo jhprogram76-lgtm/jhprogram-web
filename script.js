@@ -1,4 +1,18 @@
 /* jhprogram Studio — interacción accesible y consentimiento de analítica. */
+// Fallback global para que la pantalla de entrada también funcione si el navegador
+// conserva una copia antigua del JavaScript en caché.
+window.entrarALaWeb = () => {
+    const intro = document.getElementById('intro-overlay');
+    const mainContent = document.getElementById('main-content');
+    if (!intro || intro.hidden) return;
+    intro.classList.add('fade-out');
+    mainContent?.classList.add('visible');
+    window.setTimeout(() => {
+        intro.hidden = true;
+        document.body.style.overflow = '';
+    }, 650);
+};
+
 (() => {
     'use strict';
 
@@ -116,16 +130,9 @@
         }
         document.body.style.overflow = 'hidden';
         const enter = () => {
-            if (intro.hidden) return;
-            intro.classList.add('fade-out');
-            mainContent?.classList.add('visible');
-            window.setTimeout(() => {
-                intro.hidden = true;
-                document.body.style.overflow = '';
-                document.querySelector('.skip-link')?.focus({ preventScroll: true });
-            }, 650);
+            window.entrarALaWeb();
+            window.setTimeout(() => document.querySelector('.skip-link')?.focus({ preventScroll: true }), 650);
         };
-        intro.addEventListener('click', enter);
         intro.addEventListener('keydown', (event) => {
             if (event.key === 'Enter' || event.key === ' ') {
                 event.preventDefault();
