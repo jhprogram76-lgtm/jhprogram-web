@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Estudio de Diseño Web, Branding y Marketing | jhprogram Studio</title>
-<meta name="description" content="Desarrollo web a medida con arquitecturas rápidas, estrategias de marketing digital y branding para hacer crecer tu negocio. ¡Pide tu presupuesto!">
+<title>Diseño web a medida en Blanes | jhprogram Studio</title>
+<meta name="description" content="Diseño y desarrollo web a medida en Blanes y Girona, branding, SEO técnico y marketing digital para negocios que quieren crecer.">
 
 <meta name="robots" content="index, follow">
 <link rel="canonical" href="https://jhprogramstudio.com/">
@@ -14,6 +14,7 @@
 <meta property="og:title" content="jhprogram | Studio">
 <meta property="og:description" content="Desarrollo web a medida, marketing digital y branding — sin plantillas pesadas y con diseño UI/UX de alta conversión.">
 <meta property="og:image" content="https://jhprogramstudio.com/logo2.webp">
+<meta property="og:image:alt" content="Logotipo de jhprogram Studio">
 <meta property="og:url" content="https://jhprogramstudio.com/">
 <meta property="og:locale" content="es_ES">
 <!-- Twitter Card -->
@@ -21,27 +22,28 @@
 <meta name="twitter:title" content="jhprogram | Studio">
 <meta name="twitter:description" content="Desarrollo web a medida, marketing digital y branding.">
 <meta name="twitter:image" content="https://jhprogramstudio.com/logo2.webp">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,420..700;1,9..144,420..600&family=Nunito:wght@400;600;700;800&family=Great+Vibes&family=Dancing+Script:wght@600&display=swap">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,420..700;1,9..144,420..600&family=Nunito:wght@400;600;700;800&family=Great+Vibes&family=Dancing+Script:wght@600&display=swap" media="print" onload="this.media='all'">
-<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,420..700;1,9..144,420..600&family=Nunito:wght@400;600;70OTH&family=Great+Vibes&family=Dancing+Script:wght@6₀₀&display=swap"></noscript>
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<meta name="theme-color" content="#f7f3e6">
 <link rel="stylesheet" href="style.css">
-<script>if(location.hash){document.documentElement.classList.add('skip-intro');}</script>
+<script>document.documentElement.classList.add('js-enabled'); if(location.hash){document.documentElement.classList.add('skip-intro');}</script>
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"ProfessionalService",
+  "name":"jhprogram Studio",
+  "url":"https://jhprogramstudio.com/",
+  "logo":"https://jhprogramstudio.com/logo2.webp",
+  "email":"info@jhprogramstudio.com",
+  "founder":{"@type":"Person","name":"Jordi Hernandez Sanchez"},
+  "address":{"@type":"PostalAddress","streetAddress":"Calle Valldolig 28","postalCode":"17300","addressLocality":"Blanes","addressRegion":"Girona","addressCountry":"ES"},
+  "areaServed":"ES",
+  "sameAs":["https://www.instagram.com/jhprogram_Designer"]
+}
+</script>
 </head>
 
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-GSQQEHWRJR"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-GSQQEHWRJR');
-</script>
-
 <body>
-    <div id="intro-overlay" class="intro-container" onclick="entrarALaWeb()">
+    <button id="intro-overlay" class="intro-container" type="button" aria-label="Entrar en jhprogram Studio">
         <div class="signature-stage">
             <svg class="signature-svg" viewBox="0 0 1100 480" xmlns="http://www.w3.org/2000/svg">
                 <text class="sig-stroke" x="550" y="230" text-anchor="middle">jhprogramstudio</text>
@@ -49,16 +51,17 @@
                 <line class="sig-line" x1="330" y1="285" x2="770" y2="285" />
                 <text class="sig-by" x="550" y="360" text-anchor="middle">by la ballenita</text>
             </svg>
-            
+            <span class="tap-to-enter">Entrar en la web</span>
         </div>
-    </div>
+    </button>
+    <a class="skip-link" href="#main-content">Saltar al contenido principal</a>
     <main id="main-content" class="site-content">
         <!-- NAVBAR ESTILO PORTAFOLIO (CREMA) -->
-        <nav class="navbar portfolio-nav">
+        <nav class="navbar portfolio-nav" aria-label="Navegación principal">
             <a href="index.html" class="nav-brand-link">
                 <span class="nav-brand-text">jhprogram</span><span class="nav-brand-badge">studio</span>
             </a>
-            <button class="nav-toggle" id="navToggle" aria-label="Abrir menú" aria-expanded="false"><span></span><span></span><span></span></button>
+            <button class="nav-toggle" id="navToggle" aria-label="Abrir menú" aria-expanded="false" aria-controls="navLinks"><span></span><span></span><span></span></button>
             <div class="nav-links" id="navLinks">
                 <a href="#nosotros">Nosotros</a>
                 <a href="#servicios">Servicios</a>
@@ -70,9 +73,9 @@
         </nav>
 
         <section id="inicio" class="hero-section hero-with-bg"><div class="hero-container"><h1 class="hero-title">Desarrollo Web a Medida, Branding y Marketing Digital</h1><p class="hero-intro"><strong>Creamos soluciones digitales a medida y sin intermediarios. Sitios web y aplicaciones, optimizadas para cargar al instante y transformar tus visitas en clientes fieles.</strong></p><div class="hero-actions"><a href="#servicios" class="btn-primary">Hablemos de tu proyecto</a></div></div></section>
-        <section id="nosotros" class="about-section"><div class="about-container"><div class="about-media"><img src="foto3.webp" alt="Trabajando en jhprogramstudio" class="about-photo" loading="lazy" width="1600" height="1096"></div><div class="about-text"><span class="about-badge">STUDIO</span><h2>Sobre nosotros</h2><p>Desde 2026 empezamos jhprogramstudio by la Ballenita con una idea simple: crear webs a medida sin las complicaciones ni el precio de una agencia tradicional. Seguimos formándonos cada día en desarrollo web, marketing digital, ciberseguridad y branding e identida visual para ofrecerte no solo una web bonita, sino un código sólido, seguro y pensado para crecer contigo.</p><p class="about-signature">jhprogramstudio — <em>designed &amp; developed by la Ballenita</em></p></div></div></section>
+        <section id="nosotros" class="about-section"><div class="about-container"><div class="about-media"><img src="foto3.webp" alt="Trabajando en jhprogramstudio" class="about-photo" loading="lazy" width="1600" height="1096"></div><div class="about-text"><span class="about-badge">STUDIO</span><h2>Sobre nosotros</h2><p>Desde 2026 empezamos jhprogramstudio by la Ballenita con una idea simple: crear webs a medida sin las complicaciones ni el precio de una agencia tradicional. Seguimos formándonos cada día en desarrollo web, marketing digital, ciberseguridad y branding e identidad visual para ofrecerte no solo una web bonita, sino un código sólido, seguro y pensado para crecer contigo.</p><p class="about-signature">jhprogramstudio — <em>designed &amp; developed by la Ballenita</em></p></div></div></section>
         <div class="wood-divider"><div class="divider-content"><span class="divider-badge">Meticulous Craftsmanship</span><h2>"La simplicidad es la máxima sofisticación. Construimos con precisión milimétrica."</h2></div></div>
-        <section id="servicios" class="services-section services-with-bg"><div class="services-container"><div class="services-header"><h2>¿Qué hacemos en el Studio?</h2><p><strong>Web, marketing y branding bajo un mismo techo.</strong>   </p><span class="price-hint">Proyectos web desde 350€</span></div><div class="services-grid"><div class="service-box"><div class="service-icon-wrapper"><span class="service-icon">💻</span></div><h3>Desarrollos Web a Medida</h3><p>Páginas corporativas, landing pages de alta conversión y aplicaciones web robustas construidas con código limpio.</p><ul class="services-features"><li>Código nativo y frameworks</li><li>Arquitecturas web optimizadas</li></ul></div><div class="service-box"><div class="service-icon-wrapper"><span class="service-icon">🎨</span></div><h3>Diseños de Interfaz (UI/UX)</h3><p>Estructuramos experiencias visuales intuitivas que guían al usuario hacia la acción y fieles a tu identidad.</p><ul class="services-features"><li>Prototipados interactivos previos</li><li>Interfaces adaptadas a móviles</li></ul></div><div class="service-box"><div class="service-icon-wrapper"><span class="service-icon">⚡</span></div><h3>Optimizaciones</h3><p>Analizamos, limpiamos y aceleramos tu sitio para garantizar las máximas puntuaciones en Google PageSpeed.</p><ul class="services-features"><li>Auditorías de rendimiento</li><li>Compresiones de recursos</li></ul></div><div class="service-box"><div class="service-icon-wrapper"><span class="service-icon">📈</span></div><h3>Marketing Digital</h3><p>Diseñamos estrategias que llevan tráfico real a tu web y lo convierten en clientes, con datos en lugar de suposiciones.</p><ul class="services-features"><li>SEO y posicionamiento en buscadores</li><li>Gestión de campañas y redes sociales</li></ul></div><div class="service-box"><div class="service-icon-wrapper"><span class="service-icon">✨</span></div><h3>Branding e Identidad Visual</h3><p>Construimos una imagen de marca coherente y memorable, desde el logotipo hasta cada pieza que ve tu cliente.</p><ul class="services-features"><li>Diseño de logotipo y paleta de marca</li><li>Manual de identidad visual</li></ul></div></div></div></section>
+        <section id="servicios" class="services-section services-with-bg"><div class="services-container"><div class="services-header"><h2>¿Qué hacemos en el Studio?</h2><p><strong>Web, marketing y branding bajo un mismo techo.</strong>   </p><span class="price-hint">Proyectos web desde 350€</span></div><div class="services-grid"><div class="service-box"><div class="service-icon-wrapper"><span class="service-icon">💻</span></div><h3>Desarrollos Web a Medida</h3><p>Páginas corporativas, landing pages de alta conversión y aplicaciones web robustas construidas con código limpio.</p><ul class="services-features"><li>Código nativo y frameworks</li><li>Arquitecturas web optimizadas</li></ul></div><div class="service-box"><div class="service-icon-wrapper"><span class="service-icon">🎨</span></div><h3>Diseños de Interfaz (UI/UX)</h3><p>Estructuramos experiencias visuales intuitivas que guían al usuario hacia la acción y fieles a tu identidad.</p><ul class="services-features"><li>Prototipados interactivos previos</li><li>Interfaces adaptadas a móviles</li></ul></div><div class="service-box"><div class="service-icon-wrapper"><span class="service-icon">⚡</span></div><h3>Optimizaciones</h3><p>Analizamos, limpiamos y aceleramos tu sitio para mejorar la velocidad, la estabilidad y la experiencia de uso.</p><ul class="services-features"><li>Auditorías de rendimiento</li><li>Compresiones de recursos</li></ul></div><div class="service-box"><div class="service-icon-wrapper"><span class="service-icon">📈</span></div><h3>Marketing Digital</h3><p>Diseñamos estrategias que llevan tráfico real a tu web y lo convierten en clientes, con datos en lugar de suposiciones.</p><ul class="services-features"><li>SEO y posicionamiento en buscadores</li><li>Gestión de campañas y redes sociales</li></ul></div><div class="service-box"><div class="service-icon-wrapper"><span class="service-icon">✨</span></div><h3>Branding e Identidad Visual</h3><p>Construimos una imagen de marca coherente y memorable, desde el logotipo hasta cada pieza que ve tu cliente.</p><ul class="services-features"><li>Diseño de logotipo y paleta de marca</li><li>Manual de identidad visual</li></ul></div></div></div></section>
         <div class="wood-divider thin-divider"><div class="divider-content"><span class="divider-badge">Transparencia Total</span><h2>"Sin letra pequeña. Resolvemos cada duda antes de que la tengas."</h2></div></div>
         <section id="faq" class="faq-section faq-with-bg">
             <div class="faq-container"><div class="faq-header"><h2>Preguntas Frecuentes</h2><p>Todo lo que necesitas saber sobre plazos, pagos, propiedad del código y mantenimientos.</p></div><div class="faq-grid">
@@ -95,7 +98,7 @@
                                 <li>Monitorización de caídas en tiempo real 24/7</li>
                                 <li>Soporte técnico por correo electrónico</li>
                             </ul>
-                            <button class="pricing-btn" type="button">Contratar Plan Esencial</button>
+                            <a class="pricing-btn pricing-btn-link" href="#contacto">Consultar Plan Esencial</a>
                         </div>
                         <div class="pricing-card pricing-featured">
                             <span class="pricing-badge">Más Elegido</span>
@@ -109,7 +112,7 @@
                                 <li>1 hora mensual incluida para cambios de contenido o diseño</li>
                                 <li>Atención prioritaria por WhatsApp directo</li>
                             </ul>
-                            <button class="pricing-btn pricing-btn-primary" type="button">Recomendado · Elegir Plan Activo</button>
+                            <a class="pricing-btn pricing-btn-primary pricing-btn-link" href="#contacto">Consultar Plan Activo</a>
                         </div>
                         <div class="pricing-card">
                             <h4>E-Commerce &amp; Pro</h4>
@@ -122,12 +125,12 @@
                                 <li>2 horas mensuales incluidas para cambios y promociones</li>
                                 <li>Informes mensuales de visitas y rendimiento analítico</li>
                             </ul>
-                            <button class="pricing-btn" type="button">Contratar Plan E-Commerce</button>
+                            <a class="pricing-btn pricing-btn-link" href="#contacto">Consultar Plan E-Commerce</a>
                         </div>
                     </div>
                 </div>
             </div></details></div>
-            <div class="faq-item"><details><summary><h3>¿Nuestro sitio web aparecerá en la primera página de Google?</h3><span class="faq-icon"></span></summary><div class="faq-content"><p>Todos nuestros proyectos incluyen SEO técnico de base: estructuramos el código al límite, optimizamos la velocidad de carga al 100% y añadimos metadatos semánticos para cumplir con los estándares de Google. Esto os da la base técnica perfecta para escalar posiciones de forma orgánica.</p></div></details></div>
+            <div class="faq-item"><details><summary><h3>¿Nuestro sitio web aparecerá en la primera página de Google?</h3><span class="faq-icon"></span></summary><div class="faq-content"><p>Todos nuestros proyectos incluyen SEO técnico de base: creamos una base técnica cuidada, mejoramos la velocidad de carga y añadimos metadatos semánticos siguiendo las buenas prácticas de buscadores. Esto os da la base técnica perfecta para escalar posiciones de forma orgánica.</p></div></details></div>
             <div class="faq-item"><details><summary><h3>¿También podéis encargaros de nuestro marketing digital?</h3><span class="faq-icon"></span></summary><div class="faq-content"><p>Sí. Más allá de construir la web, diseñamos la estrategia para que te encuentren: SEO avanzado, gestión de campañas de pago y contenido para redes sociales, todo coordinado con el desarrollo técnico para que ambas partes remen en la misma dirección.</p></div></details></div>
             <div class="faq-item"><details><summary><h3>¿Qué incluye el servicio de branding e identidad visual?</h3><span class="faq-icon"></span></summary><div class="faq-content"><p>Diseño de logotipo, paleta de colores, tipografías y un manual de marca que asegura que tu negocio se vea coherente en la web, redes sociales y cualquier material impreso. Es el punto de partida ideal si aún no tienes una identidad definida.</p></div></details></div>
             <div class="faq-item"><details><summary><h3>¿Cómo nos comunicaremos durante el desarrollo?</h3><span class="faq-icon"></span></summary><div class="faq-content"><p>Trabajamos de forma directa y personal contigo, sin comerciales ni burocracia. Nos comunicaremos fluidamente vía WhatsApp, Slack o videollamadas periódicas. Os proporcionaremos enlaces de previsualización en vivo para que sigáis el progreso paso a paso en tiempo real.</p></div></details></div>
@@ -148,27 +151,27 @@
                         <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
                         <div class="qualifier-row">
                             <div class="qualifier-field">
-                                <label>Tu Nombre Completo *</label>
-                                <input type="text" name="Nombre completo" placeholder="Ej. Carlos Mendoza" required>
+                                <label for="nombre-completo">Tu nombre completo *</label>
+                                <input id="nombre-completo" type="text" name="Nombre completo" autocomplete="name" placeholder="Ej. Carlos Mendoza" required>
                             </div>
                             <div class="qualifier-field">
-                                <label>Tu Correo Electrónico *</label>
-                                <input type="email" name="Correo electrónico" placeholder="Ej. carlos@empresa.com" required>
-                            </div>
-                        </div>
-                        <div class="qualifier-row">
-                            <div class="qualifier-field">
-                                <label>Teléfono / WhatsApp (Opcional)</label>
-                                <input type="tel" name="Teléfono / WhatsApp" placeholder="Ej. +34 600 000 000">
-                            </div>
-                            <div class="qualifier-field">
-                                <label>Nombre de tu Empresa / Marca</label>
-                                <input type="text" name="Empresa / Marca" placeholder="Ej. Estudio Creativo / Marca personal">
+                                <label for="correo-electronico">Tu correo electrónico *</label>
+                                <input id="correo-electronico" type="email" name="Correo electrónico" autocomplete="email" placeholder="Ej. carlos@empresa.com" required>
                             </div>
                         </div>
                         <div class="qualifier-row">
                             <div class="qualifier-field">
-                                <label for="tipo-solucion">Tipo de Solución Digital Seleccionada *</label>
+                                <label for="telefono">Teléfono / WhatsApp (opcional)</label>
+                                <input id="telefono" type="tel" name="Teléfono / WhatsApp" autocomplete="tel" placeholder="Ej. +34 600 000 000">
+                            </div>
+                            <div class="qualifier-field">
+                                <label for="empresa">Nombre de tu empresa / marca</label>
+                                <input id="empresa" type="text" name="Empresa / Marca" autocomplete="organization" placeholder="Ej. Estudio Creativo / Marca personal">
+                            </div>
+                        </div>
+                        <div class="qualifier-row">
+                            <div class="qualifier-field">
+                                <label for="tipo-solucion">Tipo de solución digital seleccionada *</label>
                                 <select name="Tipo de solución" id="tipo-solucion" required>
                                     <option value="" disabled selected>Selecciona una opción</option>
                                     <option>Landing Page de Alta Conversión (Desde 350€)</option>
@@ -180,7 +183,7 @@
                                 </select>
                             </div>
                             <div class="qualifier-field">
-                                <label for="presupuesto-estimado">Rango de Presupuesto Estimado *</label>
+                                <label for="presupuesto-estimado">Rango de presupuesto estimado *</label>
                                 <select name="Presupuesto estimado" id="presupuesto-estimado" required>
                                     <option value="" disabled selected>Selecciona un rango</option>
                                     <option>400€ - 800€</option>
@@ -191,20 +194,26 @@
                             </div>
                         </div>
                         <div class="qualifier-field qualifier-field-full">
-                            <label>¿En qué punto se encuentra tu idea? *</label>
-                            <div class="qualifier-radio-group">
+                            <span class="field-label" id="estado-idea-label">¿En qué punto se encuentra tu idea? *</span>
+                            <div class="qualifier-radio-group" role="radiogroup" aria-labelledby="estado-idea-label">
                                 <label class="qualifier-radio-option"><input type="radio" name="Estado de la idea" value="Tengo la idea clara, falta programarla" required><span>Tengo la idea clara, falta programarla</span></label>
                                 <label class="qualifier-radio-option"><input type="radio" name="Estado de la idea" value="Ya tengo web vieja y quiero renovarla"><span>Ya tengo web vieja y quiero renovarla</span></label>
                                 <label class="qualifier-radio-option"><input type="radio" name="Estado de la idea" value="Es una idea inicial, necesito asesoría"><span>Es una idea inicial, necesito asesoría</span></label>
                             </div>
                         </div>
                         <div class="qualifier-field qualifier-field-full">
-                            <label>Cuéntanos sobre tu negocio y qué objetivos buscas con esta web *</label>
-                            <textarea name="Detalles del proyecto" rows="4" placeholder="¿A qué se dedica tu negocio? ¿Qué funciones específicas necesitas? (ej. pasarela de pago, área privada, catálogo, sistema de reservas...)" required></textarea>
+                            <label for="detalles-proyecto">Cuéntanos sobre tu negocio y qué objetivos buscas con esta web *</label>
+                            <textarea id="detalles-proyecto" name="Detalles del proyecto" rows="4" placeholder="¿A qué se dedica tu negocio? ¿Qué funciones específicas necesitas? (ej. pasarela de pago, área privada, catálogo, sistema de reservas...)" required></textarea>
+                        </div>
+                        <div class="privacy-consent">
+                            <label class="checkbox-label" for="privacy-consent">
+                                <input id="privacy-consent" type="checkbox" name="consentimiento_privacidad" value="aceptado" required>
+                                <span>He leído la <a href="politica-privacidad.html" target="_blank" rel="noopener">Política de privacidad</a> y entiendo cómo se tratarán mis datos. *</span>
+                            </label>
                         </div>
                         <div class="qualifier-footer">
-                            <p class="qualifier-guarantee">Respuesta en &lt;24h</p>
-                            <button type="submit" class="qualifier-submit"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M3 11L21 3L13 21L11 13L3 11Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg>Enviar Detalles del Proyecto</button>
+                            <p class="qualifier-guarantee">Respuesta en &lt;24 h</p>
+                            <button type="submit" class="qualifier-submit"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M3 11L21 3L13 21L11 13L3 11Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg>Enviar Detalles del Proyecto</button>
                         </div>
                     </form>
                 </div>
@@ -216,7 +225,7 @@
                     <div class="footer-logo"><img src="logo2.webp" alt="Logotipo de jhprogram Studio" class="footer-logo-icon" width="289" height="256"><div class="footer-logo-text-wrap"><span class="footer-logo-text">jhprogram</span><span class="footer-logo-badge">DESIGNED &amp; DEVELOPED by la Ballenita</span></div></div>
                     <p class="footer-brand-desc">Estudio independiente especializado en desarrollos web a medida, marketing digital y branding — arquitecturas rápidas sin plantillas pesadas y diseños UI/UX de alta conversión.</p>
                     <div class="footer-social">
-                        <a href="https://www.instagram.com/jhprogram_Designer" target="_blank" rel="noopener" class="footer-social-icon" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="3" y="3" width="18" height="18" rx="5" stroke="currentColor" stroke-width="1.8"/><circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="1.8"/><circle cx="17.2" cy="6.8" r="1.1" fill="currentColor"/></svg></a>
+                        <a href="https://www.instagram.com/jhprogram_Designer" target="_blank" rel="noopener noreferrer" class="footer-social-icon" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="3" y="3" width="18" height="18" rx="5" stroke="currentColor" stroke-width="1.8"/><circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="1.8"/><circle cx="17.2" cy="6.8" r="1.1" fill="currentColor"/></svg></a>
                         </div>
                 </div>
                 <div class="footer-col">
@@ -224,12 +233,14 @@
                     <ul class="footer-list">
                         <li><a href="aviso-legal.html">Aviso legal</a></li>
                         <li><a href="politica-privacidad.html">Política de privacidad</a></li>
+                        <li><a href="politica-cookies.html">Política de cookies</a></li>
                         <li><a href="terminos-condiciones.html">Términos y condiciones</a></li>
+                        <li><button type="button" class="footer-cookie-link" id="open-cookie-settings">Gestionar cookies</button></li>
                     </ul>
                 </div>
                 <div class="footer-col">
                     <h3>CONTACTO DIRECTO</h3>
-                    <p class="footer-contact-line">Email: <a href="mailto:info@jhprogramstudio.com">info@jhprogramstudio.com</a></p>
+                    <p class="footer-contact-line">Email: <a href="/cdn-cgi/l/email-protection#94fdfaf2fbd4fefce4e6fbf3e6f5f9e7e0e1f0fdfbbaf7fbf9"><span class="__cf_email__" data-cfemail="0a63646c654a60627a78656d786b67797e7f6e636524696567">[email&#160;protected]</span></a></p>
                     <p class="footer-contact-line">Horario: Lunes a Viernes 09:00 - 17:00 CET</p>
                     <p class="footer-contact-line">Blanes, Girona.</p>
                     
@@ -241,6 +252,32 @@
             </div>
         </footer>
     </main>
-    <script src="script.js"></script>
-</body>
+    <section class="cookie-banner" id="cookie-banner" aria-label="Preferencias de cookies" hidden>
+        <div class="cookie-banner-content">
+            <div>
+                <h2>Tu privacidad importa</h2>
+                <p>Usamos almacenamiento local para recordar tu elección y, solo si lo aceptas, Google Analytics para estadísticas. Puedes aceptar, rechazar o configurar. <a href="politica-cookies.html">Más información</a>.</p>
+            </div>
+            <div class="cookie-actions">
+                <button type="button" class="cookie-button cookie-button-secondary" id="cookie-reject">Rechazar no necesarias</button>
+                <button type="button" class="cookie-button cookie-button-secondary" id="cookie-configure">Configurar</button>
+                <button type="button" class="cookie-button cookie-button-primary" id="cookie-accept">Aceptar todas</button>
+            </div>
+        </div>
+    </section>
+    <div class="cookie-modal" id="cookie-modal" role="dialog" aria-modal="true" aria-labelledby="cookie-modal-title" hidden>
+        <div class="cookie-modal-card">
+            <button type="button" class="cookie-modal-close" id="cookie-modal-close" aria-label="Cerrar configuración">×</button>
+            <h2 id="cookie-modal-title">Configurar cookies</h2>
+            <p>Las cookies necesarias no se pueden desactivar porque permiten recordar tu elección. La analítica está desactivada por defecto.</p>
+            <label class="cookie-option"><input type="checkbox" checked disabled><span><strong>Necesarias</strong><small>Preferencia local del panel.</small></span></label>
+            <label class="cookie-option"><input type="checkbox" id="analytics-consent"><span><strong>Analíticas</strong><small>Google Analytics, solo con tu autorización.</small></span></label>
+            <div class="cookie-modal-actions">
+                <button type="button" class="cookie-button cookie-button-secondary" id="cookie-modal-reject">Rechazar no necesarias</button>
+                <button type="button" class="cookie-button cookie-button-primary" id="cookie-save">Guardar preferencias</button>
+            </div>
+        </div>
+    </div>
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="script.js" defer></script>
+<script>(function(){function c(){var b=a.contentDocument||(a.contentWindow&&a.contentWindow.document);if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'a40acd1018ba0385',t:'MTc5MDM0NzQwNA=='};var a=document.createElement('script');a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
 </html>

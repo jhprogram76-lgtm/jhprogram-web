@@ -155,3 +155,9 @@ a{color:inherit}
 }
 .sheet-footer a{text-decoration:underline;text-underline-offset:3px;color:var(--ink-soft);transition:color .2s}
 .sheet-footer a:hover{color:var(--hoja-oscura)}
+/* Estados de teclado y respeto por preferencias del sistema. */
+.nav-links a:focus-visible,.nav-toggle:focus-visible,.sheet-footer a:focus-visible{outline:3px solid var(--limon-oscuro);outline-offset:4px}
+@media (prefers-reduced-motion:reduce){
+    html{scroll-behavior:auto}
+    *,*::before,*::after{transition-duration:.01ms !important;animation-duration:.01ms !important;animation-iteration-count:1 !important}
+}

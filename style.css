@@ -35,7 +35,8 @@
 }
 
 *{margin:0;padding:0;box-sizing:border-box}
-body,html{width:100%;height:100%;overflow:hidden;font-family:'Nunito',ui-sans-serif,system-ui,sans-serif;background-color:var(--bg);color:var(--ink);scroll-behavior:smooth}
+html{scroll-behavior:smooth}
+body,html{width:100%;min-height:100%;overflow-x:hidden;font-family:'Nunito',ui-sans-serif,system-ui,sans-serif;background-color:var(--bg);color:var(--ink)}
 h1,h2,h3,h4{font-family:'Fraunces',serif}
 
 /* 1. INTRO / PANTALLA DE ENTRADA — firma animada (ligera, sin vídeo) */
@@ -58,8 +59,9 @@ h1,h2,h3,h4{font-family:'Fraunces',serif}
 }
 
 /* 2. TRANSICIÓN Y CONTENIDO PRINCIPAL */
-.site-content{opacity:0;transform:translateY(20px);transition:opacity 1s ease .3s,transform 1s ease .3s}
-.site-content.visible{opacity:1;transform:translateY(0)}
+.site-content{opacity:1;transform:none}
+.js-enabled .site-content{opacity:0;transform:translateY(20px);transition:opacity 1s ease .3s,transform 1s ease .3s}
+.js-enabled .site-content.visible{opacity:1;transform:translateY(0)}
 
 /* 3. NAVBAR */
 .navbar{display:flex;justify-content:space-between;align-items:center;padding:22px 8%;position:relative;width:100%;z-index:100;background:rgba(246,243,217,.92);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);border-bottom:1px solid var(--menta-linea-fuerte)}
@@ -279,7 +281,7 @@ h1,h2,h3,h4{font-family:'Fraunces',serif}
 /* 14. LLEGADA DIRECTA A UNA SECCIÓN (salta la intro) */
 html.skip-intro #intro-overlay{display:none}
 html.skip-intro #main-content{opacity:1;transform:none}
-html.skip-intro body{overflow:auto}
+html.skip-intro body{overflow-x:hidden;overflow-y:auto}
 
 /* 15. RESPIRO EN MÓVIL */
 @media (max-width:768px){
@@ -295,3 +297,59 @@ html.skip-intro body{overflow:auto}
     .service-box,.qualifier-card{padding:26px}
     .faq-grid{gap:14px}
 }
+/* 16. Accesibilidad, controles de consentimiento y estados interactivos */
+[hidden]{display:none !important}
+button,a,input,select,textarea{font:inherit}
+button{color:inherit}
+button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible,summary:focus-visible{outline:3px solid var(--limon-oscuro);outline-offset:3px}
+.skip-link{position:fixed;left:16px;top:12px;z-index:10001;transform:translateY(-160%);padding:10px 16px;background:var(--ink);color:var(--paper);border-radius:10px;text-decoration:none;font-weight:700}
+.skip-link:focus{transform:translateY(0)}
+.intro-container{border:0;padding:0;font:inherit;color:inherit;text-align:inherit}
+section[id]{scroll-margin-top:92px}
+.field-label{display:block;font-size:13px;font-weight:700;color:var(--ink);margin-bottom:9px}
+.privacy-consent{margin:0 0 20px}
+.checkbox-label{display:flex;align-items:flex-start;gap:10px;color:var(--ink-soft);font-size:13px;line-height:1.55;cursor:pointer}
+.checkbox-label input{width:18px;height:18px;flex:0 0 auto;margin:1px 0 0;accent-color:var(--hoja-oscura)}
+.checkbox-label a{color:var(--hoja-oscura);font-weight:700;text-underline-offset:3px}
+.pricing-btn-link{display:block;text-align:center;text-decoration:none}
+.footer-cookie-link{border:0;background:none;padding:0;color:#b7c19f;text-align:left;cursor:pointer;font-size:14px}
+.footer-cookie-link:hover{color:var(--limon)}
+.cookie-banner{position:fixed;left:16px;right:16px;bottom:16px;z-index:10000;background:var(--paper);color:var(--ink);border:1px solid var(--menta-linea-fuerte);border-radius:18px;box-shadow:0 18px 48px rgba(39,51,28,.28);padding:20px 22px}
+.cookie-banner-content{display:flex;align-items:center;justify-content:space-between;gap:24px;max-width:1200px;margin:0 auto}
+.cookie-banner h2{font-family:'Nunito',sans-serif;font-size:18px;font-style:normal;margin:0 0 5px;color:var(--ink)}
+.cookie-banner p{font-size:13px;line-height:1.55;max-width:720px;margin:0;color:var(--ink-soft)}
+.cookie-banner a{color:var(--hoja-oscura);font-weight:700}
+.cookie-actions{display:flex;flex-wrap:wrap;justify-content:flex-end;gap:8px;flex-shrink:0}
+.cookie-button{border:1px solid var(--menta-linea-fuerte);border-radius:10px;padding:10px 14px;cursor:pointer;font-size:13px;font-weight:800;white-space:nowrap}
+.cookie-button-secondary{background:transparent;color:var(--ink)}
+.cookie-button-secondary:hover{background:var(--menta)}
+.cookie-button-primary{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+.cookie-button-primary:hover{background:var(--hoja-oscura);border-color:var(--hoja-oscura)}
+.cookie-modal{position:fixed;inset:0;z-index:10002;display:grid;place-items:center;padding:20px;background:rgba(39,51,28,.5)}
+.cookie-modal-card{position:relative;width:min(100%,520px);background:var(--paper);border:1px solid var(--menta-linea-fuerte);border-radius:20px;padding:30px;box-shadow:0 28px 70px rgba(39,51,28,.3)}
+.cookie-modal-card h2{font-size:26px;margin:0 32px 10px 0}
+.cookie-modal-card p{font-size:14px}
+.cookie-modal-close{position:absolute;top:14px;right:16px;width:36px;height:36px;border:1px solid var(--menta-linea-fuerte);background:transparent;border-radius:50%;font-size:24px;line-height:1;cursor:pointer}
+.cookie-option{display:flex;align-items:flex-start;gap:12px;padding:14px 0;border-top:1px solid var(--menta-linea);cursor:pointer}
+.cookie-option input{width:18px;height:18px;margin:2px 0 0;accent-color:var(--hoja-oscura)}
+.cookie-option span{display:flex;flex-direction:column;gap:2px;color:var(--ink)}
+.cookie-option small{color:var(--ink-soft);font-size:12px}
+.cookie-modal-actions{display:flex;justify-content:flex-end;gap:8px;margin-top:22px;flex-wrap:wrap}
+@media (max-width:900px){
+    .cookie-banner-content{align-items:flex-start;flex-direction:column;gap:14px}
+    .cookie-actions{justify-content:flex-start}
+}
+@media (max-width:560px){
+    .cookie-banner{left:10px;right:10px;bottom:10px;padding:18px}
+    .cookie-actions,.cookie-button{width:100%}
+    .cookie-button{text-align:center}
+    .cookie-modal-card{padding:24px 20px}
+}
+@media (prefers-reduced-motion:reduce){
+    html{scroll-behavior:auto}
+    .site-content,.js-enabled .site-content{transition:none}
+    .intro-container{transition:none}
+}
+/* Si JavaScript está desactivado, el contenido no queda bloqueado por la pantalla de entrada. */
+html:not(.js-enabled) #intro-overlay{display:none}
+html:not(.js-enabled) .site-content{opacity:1;transform:none}
